@@ -50,6 +50,32 @@ h1 {
   min-width: 160px;
 }
 
+.lang-buttons {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.lang-btn:hover {
+  filter: brightness(0.97);
+}
+
 .admin-link {
   color: var(--accent);
   text-decoration: none;
@@ -58,13 +84,6 @@ h1 {
 
 .admin-link:hover {
   text-decoration: underline;
-}
-
-#language {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  border-radius: 8px;
-  padding: 8px;
 }
 
 .notice {
@@ -248,6 +267,23 @@ main {
 
 .admin-vote-list li {
   margin: 2px 0;
+}
+
+.repo-link {
+  font-size: inherit;
+  color: #6a6a6a;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.repo-note {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.repo-link:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 720px) {

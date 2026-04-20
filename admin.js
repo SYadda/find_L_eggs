@@ -22,7 +22,7 @@ const ADMIN_I18N = {
     totalVotes: "Total",
   },
   zh: {
-    title: "Find L Eggs - 管理页",
+    title: "寻找大鸡蛋 - 管理页",
     subtitle: "只读看板：显示最近 3 小时内的投票。",
     langLabel: "语言",
     backToMap: "返回地图",
@@ -44,7 +44,7 @@ const ADMIN_I18N = {
     totalVotes: "总票数",
   },
   de: {
-    title: "Find L Eggs - Admin",
+    title: "Finde Eier der Größe L - Admin",
     subtitle: "Schreibgeschuetzte Uebersicht fuer Stimmen der letzten 3 Stunden.",
     langLabel: "Sprache",
     backToMap: "Zurueck zur Karte",
@@ -114,6 +114,7 @@ function localizedDisplayStatus(status) {
 }
 
 function applyAdminLanguage() {
+  document.title = ta("title");
   setAdminText("adminTitle", "title");
   setAdminText("adminSubtitle", "subtitle");
   setAdminText("adminLangLabel", "langLabel");

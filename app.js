@@ -9,6 +9,7 @@ const I18N = {
   en: {
     title: "Find L Eggs",
     tagline: "Help people with tighter budgets get larger eggs.",
+    repoNote: "Source code on",
     langLabel: "Language",
     adminLink: "Open admin view",
     description1:
@@ -31,8 +32,9 @@ const I18N = {
     thresholdTip: "Gray means no status reached threshold.",
   },
   zh: {
-    title: "Find L Eggs",
+    title: "寻找大鸡蛋",
     tagline: "帮助预算紧张的人买到更大的鸡蛋。",
+    repoNote: "开源项目，代码见",
     langLabel: "语言",
     adminLink: "打开管理页",
     description1:
@@ -54,8 +56,9 @@ const I18N = {
     thresholdTip: "灰色代表票数未达到阈值。",
   },
   de: {
-    title: "Find L Eggs",
+    title: "Finde Eier der Größe L",
     tagline: "Hilft Menschen mit kleinem Budget, groessere Eier zu finden.",
+    repoNote: "Quellcode auf",
     langLabel: "Sprache",
     adminLink: "Admin-Ansicht öffnen",
     description1:
@@ -95,8 +98,10 @@ function setText(id, key) {
 }
 
 function applyLanguage() {
+  document.title = t("title");
   setText("title", "title");
-  setText("tagline", "tagline");
+  setText("taglineText", "tagline");
+  setText("repoNoteText", "repoNote");
   setText("langLabel", "langLabel");
   setText("adminLink", "adminLink");
   setText("description1", "description1");
@@ -105,6 +110,12 @@ function applyLanguage() {
   setText("legendFew", "legendFew");
   setText("legendNone", "legendNone");
   setText("legendUnknown", "legendUnknown");
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    const isActive = btn.dataset.lang === currentLang;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
 }
 
 function markerStyle(status) {
@@ -251,14 +262,15 @@ async function renderMarkets() {
 }
 
 function setupLanguageSwitcher() {
-  const select = document.getElementById("language");
-  select.addEventListener("change", () => {
-    currentLang = select.value;
-    applyLanguage();
-    // Re-bind popup text for currently loaded markers.
-    fetchMarkets()
-      .then((markets) => markets.forEach((m) => updateMarker(m)))
-      .catch(() => undefined);
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentLang = btn.dataset.lang || "en";
+      applyLanguage();
+      // Re-bind popup text for currently loaded markers.
+      fetchMarkets()
+        .then((markets) => markets.forEach((m) => updateMarker(m)))
+        .catch(() => undefined);
+    });
   });
 }
 

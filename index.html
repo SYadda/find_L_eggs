@@ -17,15 +17,17 @@
     <header class="topbar">
       <div>
         <h1 id="title">Find L Eggs</h1>
-        <p id="tagline">Help people with tighter budgets get larger eggs.</p>
+        <p id="tagline">
+          <span id="taglineText">Help people with tighter budgets get larger eggs.</span>
+        </p>
       </div>
       <div class="lang-wrap">
-        <label for="language" id="langLabel">Language</label>
-        <select id="language" aria-label="Language switcher">
-          <option value="en">English</option>
-          <option value="zh">中文</option>
-          <option value="de">Deutsch</option>
-        </select>
+        <span id="langLabel">Language</span>
+        <div class="lang-buttons" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+        </div>
         <!-- <a class="admin-link" href="/admin" id="adminLink">Open admin view</a> -->
       </div>
     </header>
@@ -38,6 +40,10 @@
       </p>
       <p id="description2">
         Vote status: Plenty, Few, or None. Votes expire in 3 hours.
+      </p>
+      <p class="repo-note">
+        <span id="repoNoteText">Source code on</span>
+        <a class="repo-link" href="https://github.com/SYadda/find_L_eggs" target="_blank" rel="noopener noreferrer">GitHub</a>.
       </p>
     </section>
 
