@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find L Eggs</title>
+    <link rel="preconnect" href="https://tile.openstreetmap.org" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1 id="title">Find L Eggs</h1>
+        <p id="tagline">Help people with tighter budgets get larger eggs.</p>
+      </div>
+      <div class="lang-wrap">
+        <label for="language" id="langLabel">Language</label>
+        <select id="language" aria-label="Language switcher">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="de">Deutsch</option>
+        </select>
+        <!-- <a class="admin-link" href="/admin" id="adminLink">Open admin view</a> -->
+      </div>
+    </header>
+
+    <section class="notice">
+      <p id="description1">
+        Please only upload eggs priced at or below 2.49€/10 or 4.19€/18. This is
+        usually supermarket-own-brand barn eggs (Bodenhaltung). We are not
+        tracking expensive eggs.
+      </p>
+      <p id="description2">
+        Vote status: Plenty, Few, or None. Votes expire in 3 hours.
+      </p>
+    </section>
+
+    <section class="legend" aria-label="Legend">
+      <div><span class="dot plenty"></span><span id="legendPlenty">Plenty of L eggs</span></div>
+      <div><span class="dot few"></span><span id="legendFew">Few L eggs</span></div>
+      <div><span class="dot none"></span><span id="legendNone">No L eggs</span></div>
+      <div><span class="dot unknown"></span><span id="legendUnknown">Not enough information</span></div>
+    </section>
+
+    <main>
+      <div id="map" role="region" aria-label="Erlangen supermarkets map"></div>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

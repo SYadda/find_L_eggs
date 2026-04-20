@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find L Eggs - Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1 id="adminTitle">Find L Eggs - Admin</h1>
+        <p id="adminSubtitle">Read-only board for votes in the last 3 hours.</p>
+      </div>
+      <div class="lang-wrap">
+        <label for="adminLanguage" id="adminLangLabel">Language</label>
+        <select id="adminLanguage" aria-label="Language switcher">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="de">Deutsch</option>
+        </select>
+        <a class="admin-link" href="/" id="backToMap">Back to map</a>
+      </div>
+    </header>
+
+    <section class="notice">
+      <p id="adminNotice1">This page is read-only and auto-refreshes every 30 seconds.</p>
+      <p id="adminNotice2">Countdowns update every second based on local browser time.</p>
+    </section>
+
+    <main class="admin-main">
+      <div class="admin-toolbar">
+        <span id="generatedAtLabel">Generated at:</span>
+        <span id="generatedAtValue">-</span>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table" id="adminTable">
+          <thead>
+            <tr>
+              <th id="thMarket">Market</th>
+              <th id="thAddress">Address</th>
+              <th id="thSummary">Summary</th>
+              <th id="thDetails">Active votes (expires in)</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>

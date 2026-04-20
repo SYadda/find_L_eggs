@@ -1,0 +1,267 @@
+:root {
+  --bg: #f9f8f2;
+  --surface: #ffffff;
+  --ink: #242424;
+  --muted: #5f5f5f;
+  --accent: #1e5a3e;
+  --border: #d9d6c8;
+  --plenty: #2fa84f;
+  --few: #f0ba1f;
+  --none: #db3a34;
+  --unknown: #8d8d8d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top right, #fff7d6 0%, transparent 30%),
+    radial-gradient(circle at bottom left, #dff7e8 0%, transparent 40%),
+    var(--bg);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 20px 10px;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+#tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.lang-wrap {
+  display: grid;
+  gap: 6px;
+  min-width: 160px;
+}
+
+.admin-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.admin-link:hover {
+  text-decoration: underline;
+}
+
+#language {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.notice {
+  margin: 0 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.notice p {
+  margin: 8px 0;
+  line-height: 1.45;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 12px 20px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.legend div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.dot.plenty {
+  background: var(--plenty);
+}
+
+.dot.few {
+  background: var(--few);
+}
+
+.dot.none {
+  background: var(--none);
+}
+
+.dot.unknown {
+  background: var(--unknown);
+}
+
+main {
+  padding: 0 20px 20px;
+}
+
+#map {
+  height: min(72vh, 760px);
+  min-height: 420px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.popup h3 {
+  margin: 0 0 6px;
+}
+
+.popup .address {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.popup .vote-prompt {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+}
+
+.vote-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.vote-btn {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.vote-btn:hover {
+  filter: brightness(0.97);
+}
+
+.vote-btn.plenty {
+  border-color: var(--plenty);
+}
+
+.vote-btn.few {
+  border-color: var(--few);
+}
+
+.vote-btn.none {
+  border-color: var(--none);
+}
+
+.popup .counts {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: #3b3b3b;
+}
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 0.95;
+  transform: translateY(0);
+}
+
+.admin-main {
+  padding: 0 20px 20px;
+}
+
+.admin-toolbar {
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.admin-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 860px;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid #e7e5dc;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+}
+
+.admin-table thead th {
+  background: #f4f2e7;
+}
+
+.admin-vote-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.admin-vote-list li {
+  margin: 2px 0;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lang-wrap {
+    max-width: 260px;
+  }
+
+  #map {
+    height: 68vh;
+    min-height: 380px;
+  }
+}
