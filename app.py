@@ -15,7 +15,9 @@ DB_FILE = BASE_DIR / "votes.db"
 
 HOST = "127.0.0.1"
 PORT = 8000
-VOTE_TTL_HOURS = 3
+VOTE_TTL_HOURS = 12
+SAME_STATUS_COOLDOWN_HOURS = 1
+RECENT_DARK_HOURS = 3
 VOTE_THRESHOLD = 3
 
 VALID_STATUSES = {"plenty", "few", "none"}
@@ -188,7 +190,16 @@ def determine_display_status(counts, vote_details):
 
     if max_votes < VOTE_THRESHOLD:
         return f"{winning_status}_light"
-    return winning_status
+
+    # Even when votes reach threshold, only use dark color if the latest
+    # submission in the current TTL window is recent enough.
+    if not vote_details:
+        return f"{winning_status}_light"
+    latest_vote_created_at = datetime.fromisoformat(vote_details[-1]["created_at"])
+    dark_cutoff = utc_now() - timedelta(hours=RECENT_DARK_HOURS)
+    if latest_vote_created_at >= dark_cutoff:
+        return winning_status
+    return f"{winning_status}_light"
 
 
 def market_payload(market, counts, vote_details):
@@ -307,7 +318,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._send_json({"error": "Invalid status"}, status=HTTPStatus.BAD_REQUEST)
 
         ip = self.client_address[0]
-        cutoff = (utc_now() - timedelta(hours=VOTE_TTL_HOURS)).isoformat()
+        cutoff = (utc_now() - timedelta(hours=SAME_STATUS_COOLDOWN_HOURS)).isoformat()
 
         conn = sqlite3.connect(DB_FILE)
         try:
@@ -327,7 +338,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send_json(
                     {
                         "error": "duplicate_vote_same_status",
-                        "message": "This IP has already voted this status for this market within 3 hours.",
+                        "message": f"This IP has already voted this status for this market within {SAME_STATUS_COOLDOWN_HOURS} hour.",
                     },
                     status=HTTPStatus.CONFLICT,
                 )

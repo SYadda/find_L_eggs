@@ -15,10 +15,10 @@ Eine leichtgewichtige Web-App (ohne Node.js), um zu prüfen, ob Supermärkte in 
   - Rot = keine
   - Grau = unbekannt / unter Schwellwert
 - Klick auf einen Marker zeigt Marke + Adresse und ermoeglicht Abstimmung (viele / wenige / keine)
-- Gueltigkeit einer Stimme: 3 Stunden
-- Dieselbe IP kann innerhalb von 3 Stunden nicht denselben Status fuer denselben Markt erneut abstimmen
+- Gueltigkeit einer Stimme: 12 Stunden
+- Dieselbe IP kann innerhalb von 1 Stunde nicht denselben Status fuer denselben Markt erneut abstimmen
 - Markerfarbe basiert auf dem Status mit den meisten Stimmen
-- 0 Stimmen = grau, 1-2 Stimmen = helle Farben, 3+ Stimmen = dunkle Farben
+- 0 Stimmen = grau, 1-2 Stimmen = helle Farben, 3+ Stimmen = nur dann dunkle Farben, wenn die neueste Meldung innerhalb von 3 Stunden liegt (sonst helle Farben)
 - UI unterstuetzt Englisch, Chinesisch und Deutsch
 
 ## Starten

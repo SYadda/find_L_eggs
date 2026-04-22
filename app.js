@@ -18,7 +18,7 @@ const I18N = {
     description1:
       "Please only upload eggs priced at or below 2.49€/10 or 4.19€/18. This is usually supermarket-own-brand barn eggs (Bodenhaltung). We are not tracking expensive eggs.",
     description2:
-      "All data comes from user reports submitted within the last 3 hours. The best way to support us is to keep uploading data!",
+      "All data comes from recent user uploads. The best way to support us is to keep uploading fresh data!",
     legendPlenty: "Plenty of L eggs",
     legendFew: "Few L eggs",
     legendNone: "No L eggs",
@@ -29,7 +29,7 @@ const I18N = {
     voteNone: "None",
     counts: "Votes",
     duplicateVote:
-      "You already voted the same status for this market within 3 hours.",
+      "You already voted the same status for this market within 1 hour.",
     voteOk: "Vote submitted.",
     voteError: "Vote failed. Please try again.",
     noGeo: "No coordinates available for this market.",
@@ -42,8 +42,8 @@ const I18N = {
     langLabel: "语言",
     adminLink: "打开概览页",
     description1:
-      "请仅上传价格小于等于 2.49€/10 个或 4.19€/18 个的鸡蛋信息。这通常是超市自营的 Bodenhaltung 鸡蛋。我们不关注昂贵鸡蛋。",
-    description2: "所有数据均来自近 3 小时内的用户上传。对我们最好的支持，就是持续上传最新数据！",
+      "请仅上传价格小于等于 2.49€/10 个或 4.19€/18 个的鸡蛋信息。这通常是超市自有品牌的 Bodenhaltung 鸡蛋。我们不关注昂贵鸡蛋。",
+    description2: "所有数据均来自近期用户上传。对我们最好的支持，就是持续上传最新数据！",
     legendPlenty: "大量 L 号鸡蛋",
     legendFew: "少量 L 号鸡蛋",
     legendNone: "没有 L 号鸡蛋",
@@ -53,7 +53,7 @@ const I18N = {
     voteFew: "少量",
     voteNone: "没有",
     counts: "票数",
-    duplicateVote: "3 小时内你已对该超市投过同样状态。",
+    duplicateVote: "1 小时内你已对该超市投过同样状态。",
     voteOk: "投票成功。",
     voteError: "投票失败，请稍后重试。",
     noGeo: "该超市暂无坐标。",
@@ -68,7 +68,7 @@ const I18N = {
     description1:
       "Bitte melde nur Eier mit einem Preis von höchstens 2,49€/10 oder 4,19€/18. Das sind in der Regel Eigenmarken-Bodenhaltungseier. Teure Eier werden hier nicht erfasst.",
     description2:
-      "Alle Daten stammen aus Nutzer-Meldungen der letzten 3 Stunden. Die beste Unterstützung ist, weiterhin Daten hochzuladen!",
+      "Alle Daten stammen aus aktuellen Nutzer-Meldungen. Die beste Unterstützung ist, weiterhin frische Daten hochzuladen!",
     legendPlenty: "Viele L-Eier",
     legendFew: "Wenige L-Eier",
     legendNone: "Keine L-Eier",
@@ -79,7 +79,7 @@ const I18N = {
     voteNone: "Keine",
     counts: "Stimmen",
     duplicateVote:
-      "Du hast fuer diesen Markt in den letzten 3 Stunden schon denselben Status abgestimmt.",
+      "Du hast fuer diesen Markt in der letzten Stunde schon denselben Status abgestimmt.",
     voteOk: "Stimme gesendet.",
     voteError: "Abstimmung fehlgeschlagen. Bitte erneut versuchen.",
     noGeo: "Keine Koordinaten fuer diesen Markt verfuegbar.",

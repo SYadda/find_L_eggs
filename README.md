@@ -13,10 +13,10 @@ Lightweight web app (no Node.js) to check whether supermarkets in Erlangen, Für
   - red = none
   - gray = unknown / below threshold
 - Click marker to view brand + address and submit vote (plenty / few / none)
-- Vote validity: 3 hours
-- Same IP cannot submit the same vote for the same market within 3 hours
+- Vote validity: 12 hours
+- Same IP cannot submit the same vote for the same market within 1 hour
 - Main marker color is based on the highest vote count
-- 0 votes = gray, 1-2 votes = light colors, 3+ votes = dark colors
+- 0 votes = gray, 1-2 votes = light colors, 3+ votes = dark colors only if the latest submission is within 3 hours (otherwise light colors)
 - UI supports English, Chinese, and German
 
 ## Run
