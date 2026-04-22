@@ -1,6 +1,8 @@
-# 找L号鸡蛋
+# 寻找大鸡蛋
 
 语言版本: [English](README.md) | [Deutsch](README_DE.md)
+
+## 直接访问网站：[find-l-eggs.live](https://find-l-eggs.live)
 
 一个轻量级网页应用（不使用 Node.js），用于查看 Erlangen、Fürth 和 Nürnberg 的超市是否有 L 号鸡蛋。
 

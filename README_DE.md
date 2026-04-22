@@ -2,6 +2,8 @@
 
 Sprachversionen: [English](README.md) | [中文](README_中文.md)
 
+## Direkt auf die Website: [find-l-eggs.live](https://find-l-eggs.live)
+
 Eine leichtgewichtige Web-App (ohne Node.js), um zu prüfen, ob Supermärkte in Erlangen, Fürth und Nürnberg Eier der Größe L haben.
 
 ## Funktionen
