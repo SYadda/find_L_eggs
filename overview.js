@@ -1,11 +1,9 @@
 const ADMIN_I18N = {
   en: {
-    title: "Find L Eggs - Admin",
-    subtitle: "Read-only board for votes in the last 3 hours.",
+    title: "Find L Eggs - Overview",
+    subtitle: "Single-click a supermarket address to copy it; double-click to open it on the map.",
     langLabel: "Language",
     backToMap: "Back to map",
-    notice1: "This page is read-only and auto-refreshes every 30 seconds.",
-    notice2: "Countdowns update every second based on local browser time.",
     generatedAt: "Generated at:",
     thMarket: "Market",
     thAddress: "Address",
@@ -20,14 +18,13 @@ const ADMIN_I18N = {
     displayNone: "None",
     displayUnknown: "Unknown",
     totalVotes: "Total",
+    copied: "Address copied",
   },
   zh: {
-    title: "寻找大鸡蛋 - 管理页",
-    subtitle: "只读看板：显示最近 3 小时内的投票。",
+    title: "寻找大鸡蛋 - 概览页",
+    subtitle: "单击超市地址可复制到剪贴板；双击可跳转到地图并打开该超市。",
     langLabel: "语言",
     backToMap: "返回地图",
-    notice1: "本页面为只读，每 30 秒自动刷新一次。",
-    notice2: "倒计时每秒更新，基于浏览器本地时间计算。",
     generatedAt: "生成时间：",
     thMarket: "超市",
     thAddress: "地址",
@@ -42,14 +39,13 @@ const ADMIN_I18N = {
     displayNone: "没有",
     displayUnknown: "未知",
     totalVotes: "总票数",
+    copied: "地址已复制",
   },
   de: {
-    title: "Finde Eier der Größe L - Admin",
-    subtitle: "Schreibgeschuetzte Uebersicht fuer Stimmen der letzten 3 Stunden.",
+    title: "Finde Eier der Größe L - Übersicht",
+    subtitle: "Adresse einmal klicken zum Kopieren; doppelklicken, um zur Karte zu springen und den Markt zu oeffnen.",
     langLabel: "Sprache",
     backToMap: "Zurueck zur Karte",
-    notice1: "Diese Seite ist schreibgeschuetzt und aktualisiert sich alle 30 Sekunden.",
-    notice2: "Countdowns werden jede Sekunde auf Basis der lokalen Browserzeit aktualisiert.",
     generatedAt: "Erstellt um:",
     thMarket: "Markt",
     thAddress: "Adresse",
@@ -64,12 +60,14 @@ const ADMIN_I18N = {
     displayNone: "Keine",
     displayUnknown: "Unbekannt",
     totalVotes: "Gesamt",
+    copied: "Adresse kopiert",
   },
 };
 
 let adminLang = "en";
 let adminData = null;
 let countdownTimer = null;
+let currentCity = "Erlangen";
 
 function ta(key) {
   return ADMIN_I18N[adminLang][key] || ADMIN_I18N.en[key] || key;
@@ -101,13 +99,13 @@ function localizedStatus(status) {
 }
 
 function localizedDisplayStatus(status) {
-  if (status === "plenty") {
+  if (status === "plenty" || status === "plenty_light") {
     return ta("displayPlenty");
   }
-  if (status === "few") {
+  if (status === "few" || status === "few_light") {
     return ta("displayFew");
   }
-  if (status === "none") {
+  if (status === "none" || status === "none_light") {
     return ta("displayNone");
   }
   return ta("displayUnknown");
@@ -119,13 +117,84 @@ function applyAdminLanguage() {
   setAdminText("adminSubtitle", "subtitle");
   setAdminText("adminLangLabel", "langLabel");
   setAdminText("backToMap", "backToMap");
-  setAdminText("adminNotice1", "notice1");
-  setAdminText("adminNotice2", "notice2");
   setAdminText("generatedAtLabel", "generatedAt");
   setAdminText("thMarket", "thMarket");
   setAdminText("thAddress", "thAddress");
   setAdminText("thSummary", "thSummary");
   setAdminText("thDetails", "thDetails");
+}
+
+function statusPriority(displayStatus) {
+  if (displayStatus === "plenty" || displayStatus === "plenty_light") {
+    return 0;
+  }
+  if (displayStatus === "few" || displayStatus === "few_light") {
+    return 1;
+  }
+  if (displayStatus === "none" || displayStatus === "none_light") {
+    return 2;
+  }
+  return 3;
+}
+
+function openMarketOnMap(marketId) {
+  const url = new URL("/", window.location.origin);
+  url.searchParams.set("focusMarket", String(marketId));
+  window.location.href = url.toString();
+}
+
+async function copyAddress(text) {
+  if (!text) {
+    return;
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const area = document.createElement("textarea");
+  area.value = text;
+  area.setAttribute("readonly", "readonly");
+  area.style.position = "absolute";
+  area.style.left = "-9999px";
+  document.body.appendChild(area);
+  area.select();
+  document.execCommand("copy");
+  document.body.removeChild(area);
+}
+
+function applyCityButtonsState() {
+  document.querySelectorAll(".city-btn").forEach((btn) => {
+    const isActive = btn.dataset.city === currentCity;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
+
+function showAdminToast(text) {
+  let toast = document.querySelector(".admin-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.className = "admin-toast";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = text;
+  toast.style.position = "fixed";
+  toast.style.left = "50%";
+  toast.style.bottom = "20px";
+  toast.style.transform = "translateX(-50%)";
+  toast.style.background = "rgba(20, 20, 20, 0.9)";
+  toast.style.color = "#fff";
+  toast.style.padding = "8px 12px";
+  toast.style.borderRadius = "10px";
+  toast.style.fontSize = "13px";
+  toast.style.zIndex = "9999";
+  toast.style.opacity = "1";
+  toast.style.transition = "opacity 0.2s ease";
+
+  clearTimeout(showAdminToast.timer);
+  showAdminToast.timer = setTimeout(() => {
+    toast.style.opacity = "0";
+  }, 1200);
 }
 
 async function fetchAdminMarkets() {
@@ -140,7 +209,17 @@ function renderRows(data) {
   const body = document.getElementById("adminTableBody");
   body.innerHTML = "";
 
-  for (const market of data.markets) {
+  const marketsInCity = data.markets
+    .filter((market) => market.city === currentCity)
+    .sort((a, b) => {
+      const priorityDelta = statusPriority(a.display_status) - statusPriority(b.display_status);
+      if (priorityDelta !== 0) {
+        return priorityDelta;
+      }
+      return b.total_votes - a.total_votes;
+    });
+
+  for (const market of marketsInCity) {
     const tr = document.createElement("tr");
 
     const tdMarket = document.createElement("td");
@@ -148,9 +227,20 @@ function renderRows(data) {
 
     const tdAddress = document.createElement("td");
     tdAddress.textContent = market.address;
+    tdAddress.className = "admin-address";
+    tdAddress.title = ta("notice1");
+    tdAddress.style.cursor = "pointer";
+    tdAddress.addEventListener("click", () => {
+      copyAddress(market.address)
+        .then(() => showAdminToast(ta("copied")))
+        .catch(() => undefined);
+    });
+    tdAddress.addEventListener("dblclick", () => {
+      openMarketOnMap(market.id);
+    });
 
     const tdSummary = document.createElement("td");
-    tdSummary.textContent = `${ta("totalVotes")}=${market.total_votes}, plenty=${market.counts.plenty}, few=${market.counts.few}, none=${market.counts.none}, display=${localizedDisplayStatus(market.display_status)}`;
+    tdSummary.textContent = `${ta("totalVotes")}=${market.total_votes}, ${localizedStatus("plenty")}=${market.counts.plenty}, ${localizedStatus("few")}=${market.counts.few}, ${localizedStatus("none")}=${market.counts.none}`;
 
     const tdDetails = document.createElement("td");
     if (!market.vote_details.length) {
@@ -173,6 +263,15 @@ function renderRows(data) {
     tr.appendChild(tdSummary);
     tr.appendChild(tdDetails);
     body.appendChild(tr);
+  }
+
+  if (!marketsInCity.length) {
+    const emptyRow = document.createElement("tr");
+    const emptyCell = document.createElement("td");
+    emptyCell.colSpan = 4;
+    emptyCell.textContent = ta("noVotes");
+    emptyRow.appendChild(emptyCell);
+    body.appendChild(emptyRow);
   }
 }
 
@@ -198,20 +297,43 @@ async function refreshAdminData() {
 }
 
 function setupLanguage() {
-  const select = document.getElementById("adminLanguage");
-  select.addEventListener("change", () => {
-    adminLang = select.value;
-    applyAdminLanguage();
-    if (adminData) {
-      renderRows(adminData);
-      updateCountdowns();
-    }
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      adminLang = btn.dataset.lang || "en";
+      applyAdminLanguage();
+
+      document.querySelectorAll(".lang-btn").forEach((otherBtn) => {
+        const isActive = otherBtn.dataset.lang === adminLang;
+        otherBtn.classList.toggle("active", isActive);
+        otherBtn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      if (adminData) {
+        renderRows(adminData);
+        updateCountdowns();
+      }
+    });
+  });
+}
+
+function setupCityNavigation() {
+  applyCityButtonsState();
+  document.querySelectorAll(".city-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      currentCity = btn.dataset.city || "Erlangen";
+      applyCityButtonsState();
+      if (adminData) {
+        renderRows(adminData);
+        updateCountdowns();
+      }
+    });
   });
 }
 
 async function main() {
   applyAdminLanguage();
   setupLanguage();
+  setupCityNavigation();
   await refreshAdminData();
 
   if (countdownTimer) {
@@ -225,5 +347,5 @@ async function main() {
 
 main().catch(() => {
   const body = document.getElementById("adminTableBody");
-  body.innerHTML = '<tr><td colspan="4">Failed to load admin data.</td></tr>';
+  body.innerHTML = '<tr><td colspan="4">Failed to load overview data.</td></tr>';
 });

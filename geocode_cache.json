@@ -1,0 +1,743 @@
+{
+  "Möhrendorfer Str. 4, 91056 Erlangen, Germany": {
+    "lat": 49.6062735,
+    "lon": 10.98301
+  },
+  "Weidenweg 1, 91058 Erlangen, Germany": {
+    "lat": 49.5622444,
+    "lon": 10.98882
+  },
+  "Am Saidelsteig 15, 91058 Erlangen, Germany": {
+    "lat": 49.553561,
+    "lon": 11.0230701
+  },
+  "Frauenauracher Str. 11, 91056 Erlangen, Germany": {
+    "lat": 49.5885871,
+    "lon": 10.9699852
+  },
+  "Theodor-Heuss-Straße 1, 90765 Fürth, Germany": {
+    "lat": 49.5085285,
+    "lon": 10.977322
+  },
+  "Seeackerstraße 33, 90765 Fürth, Germany": {
+    "lat": 49.495571,
+    "lon": 10.9952091
+  },
+  "Waldstraße 101, 90763 Fürth, Germany": {
+    "lat": 49.4594904,
+    "lon": 11.0074919
+  },
+  "Würzburger Str. 140, 90766 Fürth, Germany": {
+    "lat": 49.4837056,
+    "lon": 10.9638238
+  },
+  "Hintere Str. 38, 90768 Fürth, Germany": {
+    "lat": 49.4927878,
+    "lon": 10.9406785
+  },
+  "Dombühler Str. 9, 90449 Nürnberg, Germany": {
+    "lat": 49.4211917,
+    "lon": 11.0311158
+  },
+  "Kurt-Triest-Straße 5, 90441 Nürnberg, Germany": {
+    "lat": 49.4317588,
+    "lon": 11.0440345
+  },
+  "Am Plärrer 19, 90443 Nürnberg, Germany": {
+    "lat": 49.4473044,
+    "lon": 11.0658436
+  },
+  "Bucher Str. 86, 90408 Nürnberg, Germany": {
+    "lat": 49.4660764,
+    "lon": 11.0698934
+  },
+  "Sulzbacher Str. 77-81, 90489 Nürnberg, Germany": {
+    "lat": 49.4580797,
+    "lon": 11.0934228
+  },
+  "Rollnerstraße 176, 90408 Nürnberg, Germany": {
+    "lat": 49.4711421,
+    "lon": 11.0827278
+  },
+  "Äußere Bayreuther Str. 78, 90491 Nürnberg, Germany": {
+    "lat": 49.4697443,
+    "lon": 11.1009487
+  },
+  "Kilianstraße 253, 90411 Nürnberg, Germany": {
+    "lat": 49.4752074,
+    "lon": 11.1028271
+  },
+  "Kieslingstraße 70, 90491 Nürnberg, Germany": {
+    "lat": 49.4738772,
+    "lon": 11.1161571
+  },
+  "Holzgartenstraße 22-24, 90461 Nürnberg, Germany": {
+    "lat": 49.4387463,
+    "lon": 11.0963496
+  },
+  "Regensburger Str. 74, 90478 Nürnberg, Germany": {
+    "lat": 49.4425006,
+    "lon": 11.1018456
+  },
+  "Weißenburger Str. 140, 90451 Nürnberg, Germany": {
+    "lat": 49.4109278,
+    "lon": 11.0336433
+  },
+  "Nägelsbachstr. 26, 91052 Erlangen, Germany": {
+    "lat": 49.5907595,
+    "lon": 11.0054484
+  },
+  "Michael-Vogel-Str. 1a, 91052 Erlangen, Germany": {
+    "lat": 49.5900975,
+    "lon": 10.999297
+  },
+  "Karl-Zucker-Str. 10, 91052 Erlangen, Germany": {
+    "lat": 49.5831319,
+    "lon": 11.0041109
+  },
+  "St. Johann 2-4, 91056 Erlangen, Germany": {
+    "lat": 49.6095434,
+    "lon": 10.9794008
+  },
+  "Cumianastr. 4, 91058 Erlangen, Germany": {
+    "lat": 49.5758751,
+    "lon": 11.0018083
+  },
+  "Vacher Str. 188, 90766 Fürth, Germany": {
+    "lat": 49.495393,
+    "lon": 10.9763874
+  },
+  "Rudolf-Breitscheid-Str. 11, 90762 Fürth, Germany": {
+    "lat": 49.4733096,
+    "lon": 10.9906252
+  },
+  "Kaiserstr. 22, 90763 Fürth, Germany": {
+    "lat": 49.461971,
+    "lon": 10.9854266
+  },
+  "Poppenreuther Str. 72-74, 90765 Fürth, Germany": {
+    "lat": 49.4824786,
+    "lon": 11.0126325
+  },
+  "Landgrabenstr. 43-45, 90443 Nürnberg, Germany": {
+    "lat": 49.439211,
+    "lon": 11.0695468
+  },
+  "Ernst-Sachs-Str. 2, 90441 Nürnberg, Germany": {
+    "lat": 49.4287193,
+    "lon": 11.0556199
+  },
+  "Gebersdorfer Str. 67, 90449 Nürnberg, Germany": {
+    "lat": 49.421614,
+    "lon": 11.0153479
+  },
+  "Josephsplatz 14-16, 90403 Nürnberg, Germany": {
+    "lat": 49.451757,
+    "lon": 11.0738346
+  },
+  "Äusserer Laufer Platz 24, 90403 Nürnberg, Germany": {
+    "lat": 49.4569317,
+    "lon": 11.087849
+  },
+  "Rollnerstr. 28, 90408 Nürnberg, Germany": {
+    "lat": 49.4615465,
+    "lon": 11.0826341
+  },
+  "Schweppermannstr. 27, 90408 Nürnberg, Germany": {
+    "lat": 49.4633574,
+    "lon": 11.0750271
+  },
+  "Brückenstr. 22, 90419 Nürnberg, Germany": {
+    "lat": 49.4580706,
+    "lon": 11.0590455
+  },
+  "Kirchenweg 5, 90419 Nürnberg, Germany": {
+    "lat": 49.4622379,
+    "lon": 11.0695546
+  },
+  "Schnieglinger Str. 63, 90419 Nürnberg, Germany": {
+    "lat": 49.4628017,
+    "lon": 11.0512626
+  },
+  "Kölner Str. 21, 90425 Nürnberg, Germany": {
+    "lat": 49.4676695,
+    "lon": 11.0588177
+  },
+  "Lichtenfelser Straße 2a, 90427 Nürnberg, Germany": {
+    "lat": 49.5182279,
+    "lon": 11.0326971
+  },
+  "Fürther Str. 221 b, 90429 Nürnberg, Germany": {
+    "lat": 49.458095,
+    "lon": 11.0317634
+  },
+  "Am Leonhardspark 3 - 5, 90439 Nürnberg, Germany": {
+    "lat": 49.4434903,
+    "lon": 11.0559072
+  },
+  "Geisseestraße 42, 90439 Nürnberg, Germany": {
+    "lat": 49.4354485,
+    "lon": 11.0426894
+  },
+  "Katzwanger Hauptstr. 102, 90453 Nürnberg, Germany": {
+    "lat": 49.3652509,
+    "lon": 11.0493532
+  },
+  "Radmeisterstr. 3, 90455 Nürnberg, Germany": {
+    "lat": 49.3708294,
+    "lon": 11.0766922
+  },
+  "Strawinskystr. 27 a, 90455 Nürnberg, Germany": {
+    "lat": 49.3474494,
+    "lon": 11.0636147
+  },
+  "Wölckernstr. 9 - 11, 90459 Nürnberg, Germany": {
+    "lat": 49.4406966,
+    "lon": 11.0840077
+  },
+  "Matthäus-Herrmann-Platz 2, 90471 Nürnberg, Germany": {
+    "lat": 49.41508,
+    "lon": 11.1054029
+  },
+  "Glogauerstr. 30-38, 90473 Nürnberg, Germany": {
+    "lat": 49.403569,
+    "lon": 11.1342508
+  },
+  "Bregenzer Str. 15, 90475 Nürnberg, Germany": {
+    "lat": 49.3976861,
+    "lon": 11.1753046
+  },
+  "Fischbacher Hauptstr. 200, 90475 Nürnberg, Germany": {
+    "lat": 49.4186062,
+    "lon": 11.1948429
+  },
+  "Schweiggerstr. 2, 90478 Nürnberg, Germany": {
+    "lat": 49.4414004,
+    "lon": 11.0904443
+  },
+  "Zerzabelshofstr. 29, 90478 Nürnberg, Germany": {
+    "lat": 49.4448103,
+    "lon": 11.1096413
+  },
+  "Ostendstr. 111, 90482 Nürnberg, Germany": {
+    "lat": 49.4562015,
+    "lon": 11.1191478
+  },
+  "Westliche Stadtmauerstraße 27, 91054 Erlangen, Germany": {
+    "lat": 49.599942,
+    "lon": 11.0011446
+  },
+  "Carl-Thiersch-Straße 4, 91052 Erlangen, Germany": {
+    "lat": 49.5938652,
+    "lon": 11.0259938
+  },
+  "Rothenburger Straße 70, 90522 Oberasbach, Germany": {
+    "lat": 49.4359565,
+    "lon": 10.9668105
+  },
+  "Fürther Straße 187, 90429 Nürnberg, Germany": {
+    "lat": 49.4561573,
+    "lon": 11.035939
+  },
+  "Schwabacher Straße 99, 90439 Nürnberg, Germany": {
+    "lat": 49.4370826,
+    "lon": 11.0521731
+  },
+  "Dianaplatz 23-25, 90443 Nürnberg, Germany": {
+    "lat": 49.4287515,
+    "lon": 11.0655879
+  },
+  "Oppelner Straße 223, 90473 Nürnberg, Germany": {
+    "lat": 49.4010802,
+    "lon": 11.135382
+  },
+  "Henkestraße 92, 91052 Erlangen, Germany": {
+    "lat": 49.5935359,
+    "lon": 11.0187713
+  },
+  "Allee am Röthelheimpark 15, 91052 Erlangen, Germany": {
+    "lat": 49.5923154,
+    "lon": 11.0286226
+  },
+  "Cumianastraße 5, 91058 Erlangen, Germany": {
+    "lat": 49.5751642,
+    "lon": 11.0004534
+  },
+  "Gundstraße 2, 91056 Erlangen, Germany": {
+    "lat": 49.5835008,
+    "lon": 10.9656787
+  },
+  "Henkestraße 5, 91052 Erlangen, Germany": {
+    "lat": 49.5939313,
+    "lon": 11.0061084
+  },
+  "Erlanger Straße 200, 90765 Fürth, Germany": {
+    "lat": 49.4940707,
+    "lon": 10.9897335
+  },
+  "Karolinenstraße 90, 90763 Fürth, Germany": {
+    "lat": 49.467766,
+    "lon": 10.9956881
+  },
+  "Hans-Vogel-Straße 50, 90765 Fürth, Germany": {
+    "lat": 49.4811969,
+    "lon": 11.0097099
+  },
+  "Würzburger Straße 171, 90766 Fürth, Germany": {
+    "lat": 49.4834393,
+    "lon": 10.9592681
+  },
+  "Magazinstraße 61, 90763 Fürth, Germany": {
+    "lat": 49.4544615,
+    "lon": 11.0016411
+  },
+  "Fürther Straße 301-303, 90429 Nürnberg, Germany": {
+    "lat": 49.4601566,
+    "lon": 11.023856
+  },
+  "Peter-Henlein-Straße 27-31, 90443 Nürnberg, Germany": {
+    "lat": 49.4415689,
+    "lon": 11.0744477
+  },
+  "Zeltnerstraße 19, 90443 Nürnberg, Germany": {
+    "lat": 49.4453649,
+    "lon": 11.0715539
+  },
+  "Lübener Straße 18, 90471 Nürnberg, Germany": {
+    "lat": 49.4108045,
+    "lon": 11.1396527
+  },
+  "Schlüsselstraße 8, 90403 Nürnberg, Germany": {
+    "lat": 49.4507447,
+    "lon": 11.0701392
+  },
+  "Adam-Klein-Straße 125, 90431 Nürnberg, Germany": {
+    "lat": 49.4541731,
+    "lon": 11.0388216
+  },
+  "Bessemer Straße 6, 90411 Nürnberg, Germany": {
+    "lat": 49.4741025,
+    "lon": 11.1042211
+  },
+  "Zollhausstraße 22, 90469 Nürnberg, Germany": {
+    "lat": 49.4007144,
+    "lon": 11.1168889
+  },
+  "Konstanzenstraße 111, 90439 Nürnberg, Germany": {
+    "lat": 49.4353553,
+    "lon": 11.0415808
+  },
+  "Regensburger Straße 266, 90480 Nürnberg, Germany": {
+    "lat": 49.4353192,
+    "lon": 11.1226863
+  },
+  "Nägelsbachstraße 59, 91052 Erlangen, Germany": {
+    "lat": 49.5875404,
+    "lon": 11.0045928
+  },
+  "Neumühle 4, 91056 Erlangen, Germany": {
+    "lat": 49.5879119,
+    "lon": 10.9776137
+  },
+  "Mönaustraße 75, 91056 Erlangen, Germany": {
+    "lat": 49.5950446,
+    "lon": 10.9498531
+  },
+  "Dresdener Str. 21, 91058 Erlangen, Germany": {
+    "lat": 49.5784571,
+    "lon": 10.9876442
+  },
+  "Schwabacher Straße 5, 90762 Fürth, Germany": {
+    "lat": 49.4752766,
+    "lon": 10.9902874
+  },
+  "Erlanger Str. 192, 90765 Fürth, Germany": {
+    "lat": 49.4931957,
+    "lon": 10.9896529
+  },
+  "Siemensstr. 41, 90766 Fürth, Germany": {
+    "lat": 49.4792006,
+    "lon": 10.9630207
+  },
+  "Fronmüllerstr. 12, 90763 Fürth, Germany": {
+    "lat": 49.4566773,
+    "lon": 10.9905554
+  },
+  "Bahnhofsplatz 9, 90443 Nürnberg, Germany": {
+    "lat": 49.4462031,
+    "lon": 11.0818654
+  },
+  "Rohrmannstr. 11, 90429 Nürnberg, Germany": {
+    "lat": 49.4479782,
+    "lon": 11.0578029
+  },
+  "Allersbergerstr. 130, 90461 Nürnberg, Germany": {
+    "lat": 49.4362161,
+    "lon": 11.0910474
+  },
+  "Thüringerstr. 2, 90459 Nürnberg, Germany": {
+    "lat": 49.433443,
+    "lon": 11.074106
+  },
+  "Ostendstr. 58, 90482 Nürnberg, Germany": {
+    "lat": 49.4519694,
+    "lon": 11.1114423
+  },
+  "Ernst-Sachs-Str. 4, 90441 Nürnberg, Germany": {
+    "lat": 49.4278883,
+    "lon": 11.055187
+  },
+  "Cuxhavener Str. 2, 90425 Nürnberg, Germany": {
+    "lat": 49.476506,
+    "lon": 11.0634793
+  },
+  "Bessemer Str. 17, 90411 Nürnberg, Germany": {
+    "lat": 49.4754522,
+    "lon": 11.1053809
+  },
+  "Fürther Straße 207a, 90429 Nürnberg, Germany": {
+    "lat": 49.4575165,
+    "lon": 11.0335675
+  },
+  "Kallmünzer Str. 16, 90478 Nürnberg, Germany": {
+    "lat": 49.4333262,
+    "lon": 11.1259571
+  },
+  "Julius-Loßmann-Str. 11, 90469 Nürnberg, Germany": {
+    "lat": 49.4165576,
+    "lon": 11.0811666
+  },
+  "Sankt-Gallen-Ring 1, 90431 Nürnberg, Germany": {
+    "lat": 49.4423913,
+    "lon": 11.0264918
+  },
+  "Brettergartenstr. 84, 90427 Nürnberg, Germany": {
+    "lat": 49.4711686,
+    "lon": 11.0260355
+  },
+  "Am Röthenbacher Landgraben 2, 90451 Nürnberg, Germany": {
+    "lat": 49.4197961,
+    "lon": 11.0372
+  },
+  "Gebersdorfer Str. 290, 90449 Nürnberg, Germany": {
+    "lat": 49.4362203,
+    "lon": 10.9969084
+  },
+  "Schweinfurter Str. 26, 90427 Nürnberg, Germany": {
+    "lat": 49.5233609,
+    "lon": 11.0141444
+  },
+  "Strawinskystr. 42, 90455 Nürnberg, Germany": {
+    "lat": 49.3458544,
+    "lon": 11.0593042
+  },
+  "Stubenlohstraße 1, 91052 Erlangen, Germany": {
+    "lat": 49.5965261,
+    "lon": 11.0158237
+  },
+  "Am Anger 8, 91052 Erlangen, Germany": {
+    "lat": 49.5845825,
+    "lon": 10.9958107
+  },
+  "Karl-Zucker-Straße 14, 91052 Erlangen, Germany": {
+    "lat": 49.5820685,
+    "lon": 11.0045017
+  },
+  "Herrnstraße 103, 90763 Fürth, Germany": {
+    "lat": 49.4662436,
+    "lon": 10.9993574
+  },
+  "Nürnberger Str. 66, 90762 Fürth, Germany": {
+    "lat": 49.4696228,
+    "lon": 11.0002977
+  },
+  "Kronacher Str. 55, 90765 Fürth, Germany": {
+    "lat": 49.4933856,
+    "lon": 10.9933081
+  },
+  "Soldnerstraße 96, 90766 Fürth, Germany": {
+    "lat": 49.4775974,
+    "lon": 10.9589465
+  },
+  "Breiter Steig 18, 90768 Fürth, Germany": {
+    "lat": 49.4928674,
+    "lon": 10.9175902
+  },
+  "Konstanzenstraße 107, 90439 Nürnberg, Germany": {
+    "lat": 49.4358092,
+    "lon": 11.041713
+  },
+  "Burgschmietstraße 42, 90419 Nürnberg, Germany": {
+    "lat": 49.4584325,
+    "lon": 11.066435
+  },
+  "Bucher Str. 41, 90419 Nürnberg, Germany": {
+    "lat": 49.4619073,
+    "lon": 11.0716182
+  },
+  "Aufseßpl. 11, 90459 Nürnberg, Germany": {
+    "lat": 49.441498,
+    "lon": 11.0804157
+  },
+  "Kopernikuspl. 5, 90459 Nürnberg, Germany": {
+    "lat": 49.4397674,
+    "lon": 11.0809394
+  },
+  "Singerstraße 4, 90443 Nürnberg, Germany": {
+    "lat": 49.4383811,
+    "lon": 11.0676093
+  },
+  "Nopitschstraße 19, 90441 Nürnberg, Germany": {
+    "lat": 49.430594,
+    "lon": 11.0474248
+  },
+  "Südwestpark 60-68, 90449 Nürnberg, Germany": {
+    "lat": 49.4282511,
+    "lon": 11.0207892
+  },
+  "Knebelstraße 1, 90427 Nürnberg, Germany": {
+    "lat": 49.4705722,
+    "lon": 11.0232552
+  },
+  "Aeusserer Laufer Platz 24, 90403 Nürnberg, Germany": {
+    "lat": 49.4569599,
+    "lon": 11.0877186
+  },
+  "Rollner Str. 121, 90408 Nürnberg, Germany": {
+    "lat": 49.4690093,
+    "lon": 11.080289
+  },
+  "Dombuehler Str. 2, 90449 Nürnberg, Germany": {
+    "lat": 49.4213213,
+    "lon": 11.0330255
+  },
+  "Galgenhofstr. 49-51, 90459 Nürnberg, Germany": {
+    "lat": 49.4432765,
+    "lon": 11.0844365
+  },
+  "Marktplatz 4, 91054 Erlangen, Germany": {
+    "lat": 49.59761,
+    "lon": 11.0029442
+  },
+  "Rathausplatz 3, 91052 Erlangen, Germany": {
+    "lat": 49.5902464,
+    "lon": 11.0067737
+  },
+  "Karl-Zucker-Straße 7-9, 91052 Erlangen, Germany": {
+    "lat": 49.5845979,
+    "lon": 11.0056066
+  },
+  "Paul-Gossen-Straße 69, 91052 Erlangen, Germany": {
+    "lat": 49.5790936,
+    "lon": 11.0022821
+  },
+  "Felix-Klein-Straße 59, 91058 Erlangen, Germany": {
+    "lat": 49.5740651,
+    "lon": 10.9971026
+  },
+  "Wetterkreuz 8, 91058 Erlangen, Germany": {
+    "lat": 49.5451245,
+    "lon": 11.0283138
+  },
+  "Sylvaniastraße 14, 91056 Erlangen, Germany": {
+    "lat": 49.5620535,
+    "lon": 10.9614754
+  },
+  "Odenwaldallee 31, 91056 Erlangen, Germany": {
+    "lat": 49.5958054,
+    "lon": 10.9625385
+  },
+  "Gartenstraße 11, 90762 Fürth, Germany": {
+    "lat": 49.4770135,
+    "lon": 10.9873351
+  },
+  "Gustavstraße 65, 90762 Fürth, Germany": {
+    "lat": 49.4796743,
+    "lon": 10.9873997
+  },
+  "Mathildenstraße 6, 90762 Fürth, Germany": {
+    "lat": 49.4742367,
+    "lon": 10.9878705
+  },
+  "Gabelsbergerstraße 1, 90762 Fürth, Germany": {
+    "lat": 49.4702338,
+    "lon": 10.9941456
+  },
+  "Erlanger Straße 52, 90765 Fürth, Germany": {
+    "lat": 49.4834135,
+    "lon": 10.9983291
+  },
+  "Vacher Straße 5-7, 90766 Fürth, Germany": {
+    "lat": 49.481064,
+    "lon": 10.9763755
+  },
+  "Salzstraße 16-22, 90763 Fürth, Germany": {
+    "lat": 49.4658857,
+    "lon": 10.9876988
+  },
+  "Kaiserstraße 173, 90763 Fürth, Germany": {
+    "lat": 49.4655818,
+    "lon": 11.0011541
+  },
+  "Wehlauer Straße 86, 90766 Fürth, Germany": {
+    "lat": 49.4785092,
+    "lon": 10.9674172
+  },
+  "Vacher Straße 188, 90766 Fürth, Germany": {
+    "lat": 49.495393,
+    "lon": 10.9763874
+  },
+  "Fronmüllerstraße 78, 90763 Fürth, Germany": {
+    "lat": 49.4581983,
+    "lon": 11.001713
+  },
+  "Kurt-Scherzer-Straße 2, 90768 Fürth, Germany": {
+    "lat": 49.4677247,
+    "lon": 10.9579046
+  },
+  "Am Grünen Weg 6, 90766 Fürth, Germany": {
+    "lat": 49.4836371,
+    "lon": 10.9482724
+  },
+  "Werkstraße 2, 90765 Fürth, Germany": {
+    "lat": 49.5039886,
+    "lon": 10.979501
+  },
+  "Gründlacher Straße 313, 90765 Fürth, Germany": {
+    "lat": 49.5120032,
+    "lon": 11.0051267
+  },
+  "Hauptmarkt 11, 90403 Nürnberg, Germany": {
+    "lat": 49.453962,
+    "lon": 11.0766463
+  },
+  "Innere Laufer Gasse 10, 90403 Nürnberg, Germany": {
+    "lat": 49.4557107,
+    "lon": 11.081777
+  },
+  "Tafelfeldstraße 16, 90443 Nürnberg, Germany": {
+    "lat": 49.4426307,
+    "lon": 11.0750811
+  },
+  "Allersberger Straße 56, 90461 Nürnberg, Germany": {
+    "lat": 49.4426666,
+    "lon": 11.088244
+  },
+  "Bayreuther Straße 34, 90489 Nürnberg, Germany": {
+    "lat": 49.4620629,
+    "lon": 11.0935383
+  },
+  "Stresemannplatz 9, 90489 Nürnberg, Germany": {
+    "lat": 49.458995,
+    "lon": 11.0962013
+  },
+  "Johannisstraße 90-94, 90419 Nürnberg, Germany": {
+    "lat": 49.4604731,
+    "lon": 11.0576432
+  },
+  "Willstraße 15, 90429 Nürnberg, Germany": {
+    "lat": 49.4525135,
+    "lon": 11.0551133
+  },
+  "Obere Kanalstraße 30-32, 90429 Nürnberg, Germany": {
+    "lat": 49.4469771,
+    "lon": 11.0573061
+  },
+  "Nordring 35, 90408 Nürnberg, Germany": {
+    "lat": 49.4699429,
+    "lon": 11.0738062
+  },
+  "Halskestraße 6, 90459 Nürnberg, Germany": {
+    "lat": 49.4356554,
+    "lon": 11.0824053
+  },
+  "Gibitzenhofstraße 94, 90443 Nürnberg, Germany": {
+    "lat": 49.4354337,
+    "lon": 11.0678538
+  },
+  "Welserstraße 42, 90489 Nürnberg, Germany": {
+    "lat": 49.464697,
+    "lon": 11.1026909
+  },
+  "Webersgasse 20, 90439 Nürnberg, Germany": {
+    "lat": 49.4412405,
+    "lon": 11.0519994
+  },
+  "Velburger Straße 3, 90478 Nürnberg, Germany": {
+    "lat": 49.4434084,
+    "lon": 11.1058917
+  },
+  "Äußere Bayreuther Straße 80, 90491 Nürnberg, Germany": {
+    "lat": 49.4695939,
+    "lon": 11.1014765
+  },
+  "Ossietzkystraße 29, 90439 Nürnberg, Germany": {
+    "lat": 49.4431246,
+    "lon": 11.0440233
+  },
+  "Maybachstraße 4, 90441 Nürnberg, Germany": {
+    "lat": 49.4288548,
+    "lon": 11.061233
+  },
+  "Pastoriusstraße 51, 90480 Nürnberg, Germany": {
+    "lat": 49.4431691,
+    "lon": 11.11786
+  },
+  "Schweinauer Hauptstraße 56, 90441 Nürnberg, Germany": {
+    "lat": 49.4321047,
+    "lon": 11.0452467
+  },
+  "Am Tillypark 1, 90431 Nürnberg, Germany": {
+    "lat": 49.4335965,
+    "lon": 11.0357269
+  },
+  "Rathsbergstraße 19, 90411 Nürnberg, Germany": {
+    "lat": 49.4869391,
+    "lon": 11.1031996
+  },
+  "Sigmundstraße 71, 90431 Nürnberg, Germany": {
+    "lat": 49.456104,
+    "lon": 11.0188171
+  },
+  "Minervastraße 169, 90469 Nürnberg, Germany": {
+    "lat": 49.4152995,
+    "lon": 11.0788688
+  },
+  "Brettergartenstraße 90, 90427 Nürnberg, Germany": {
+    "lat": 49.4711589,
+    "lon": 11.0242505
+  },
+  "Bierweg 31B, 90411 Nürnberg, Germany": {
+    "lat": 49.4866941,
+    "lon": 11.1109744
+  },
+  "Laufamholzstraße 84-86, 90482 Nürnberg, Germany": {
+    "lat": 49.4693403,
+    "lon": 11.1807062
+  },
+  "Eibacher Hauptstraße 50, 90451 Nürnberg, Germany": {
+    "lat": 49.404085,
+    "lon": 11.0347657
+  },
+  "Glogauer Straße 28-30, 90473 Nürnberg, Germany": {
+    "lat": 49.3985954,
+    "lon": 11.1414432
+  },
+  "Einsteinring 2, 90453 Nürnberg, Germany": {
+    "lat": 49.391982,
+    "lon": 11.0337582
+  },
+  "Fischbacher Hauptstraße 110, 90475 Nürnberg, Germany": {
+    "lat": 49.4185434,
+    "lon": 11.1853039
+  },
+  "Spitzwegstraße 31, 90455 Nürnberg, Germany": {
+    "lat": 49.3734943,
+    "lon": 11.1000875
+  },
+  "Katzwanger Hauptstraße 33, 90453 Nürnberg, Germany": {
+    "lat": 49.3584524,
+    "lon": 11.0515989
+  },
+  "Zufahrt über, Regensburger Str. 74, 90478 Nürnberg, Germany": null
+}

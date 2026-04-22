@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find L Eggs - Overview</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1 id="adminTitle">Find L Eggs - Overview</h1>
+        <p id="adminSubtitle">Single-click a supermarket address to copy it; double-click to open it on the map.</p>
+      </div>
+      <div class="lang-wrap">
+        <span id="adminLangLabel">Language</span>
+        <div class="lang-buttons" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+        <a class="admin-link" href="/" id="backToMap">Back to map</a>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <div class="admin-toolbar">
+        <div class="city-nav" role="group" aria-label="City navigation">
+          <button type="button" class="city-btn active" data-city="Erlangen" aria-pressed="true">Erlangen</button>
+          <button type="button" class="city-btn" data-city="Fürth" aria-pressed="false">Fürth</button>
+          <button type="button" class="city-btn" data-city="Nürnberg" aria-pressed="false">Nürnberg</button>
+        </div>
+        <span id="generatedAtLabel">Generated at:</span>
+        <span id="generatedAtValue">-</span>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table" id="adminTable">
+          <thead>
+            <tr>
+              <th id="thMarket">Market</th>
+              <th id="thAddress">Address</th>
+              <th id="thSummary">Summary</th>
+              <th id="thDetails">Active votes (expires in)</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script src="/overview.js"></script>
+  </body>
+</html>

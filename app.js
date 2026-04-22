@@ -1,7 +1,10 @@
 const STATUS_COLORS = {
   plenty: "#2fa84f",
+  plenty_light: "#9ed8aa",
   few: "#f0ba1f",
+  few_light: "#f5dea0",
   none: "#db3a34",
+  none_light: "#efada9",
   unknown: "#8d8d8d",
 };
 
@@ -11,10 +14,11 @@ const I18N = {
     tagline: "Help people with tighter budgets get larger eggs.",
     repoNote: "Source code on",
     langLabel: "Language",
-    adminLink: "Open admin view",
+    adminLink: "Open overview",
     description1:
       "Please only upload eggs priced at or below 2.49€/10 or 4.19€/18. This is usually supermarket-own-brand barn eggs (Bodenhaltung). We are not tracking expensive eggs.",
-    description2: "Vote status: Plenty, Few, or None. Votes expire in 3 hours.",
+    description2:
+      "All data comes from user reports submitted within the last 3 hours. The best way to support us is to keep uploading data!",
     legendPlenty: "Plenty of L eggs",
     legendFew: "Few L eggs",
     legendNone: "No L eggs",
@@ -36,10 +40,10 @@ const I18N = {
     tagline: "帮助预算紧张的人买到更大的鸡蛋。",
     repoNote: "开源项目，代码见",
     langLabel: "语言",
-    adminLink: "打开管理页",
+    adminLink: "打开概览页",
     description1:
       "请仅上传价格小于等于 2.49€/10 个或 4.19€/18 个的鸡蛋信息。这通常是超市自营的 Bodenhaltung 鸡蛋。我们不关注昂贵鸡蛋。",
-    description2: "可投票状态：大量、少量、没有。每条投票 3 小时后过期。",
+    description2: "所有数据均来自近 3 小时内的用户上传。对我们最好的支持，就是持续上传最新数据！",
     legendPlenty: "大量 L 号鸡蛋",
     legendFew: "少量 L 号鸡蛋",
     legendNone: "没有 L 号鸡蛋",
@@ -60,10 +64,11 @@ const I18N = {
     tagline: "Hilft Menschen mit kleinem Budget, groessere Eier zu finden.",
     repoNote: "Quellcode auf",
     langLabel: "Sprache",
-    adminLink: "Admin-Ansicht öffnen",
+    adminLink: "Uebersicht öffnen",
     description1:
       "Bitte melde nur Eier mit einem Preis von höchstens 2,49€/10 oder 4,19€/18. Das sind in der Regel Eigenmarken-Bodenhaltungseier. Teure Eier werden hier nicht erfasst.",
-    description2: "Abstimmungsstatus: Viele, Wenige oder Keine. Stimmen verfallen nach 3 Stunden.",
+    description2:
+      "Alle Daten stammen aus Nutzer-Meldungen der letzten 3 Stunden. Die beste Unterstützung ist, weiterhin Daten hochzuladen!",
     legendPlenty: "Viele L-Eier",
     legendFew: "Wenige L-Eier",
     legendNone: "Keine L-Eier",
@@ -85,6 +90,29 @@ const I18N = {
 let currentLang = "en";
 const markerMap = new Map();
 let map;
+
+function focusedMarketIdFromQuery() {
+  const raw = new URLSearchParams(window.location.search).get("focusMarket");
+  if (!raw) {
+    return null;
+  }
+  const id = Number(raw);
+  return Number.isInteger(id) && id > 0 ? id : null;
+}
+
+function focusMarketFromQuery() {
+  const marketId = focusedMarketIdFromQuery();
+  if (!marketId) {
+    return;
+  }
+  const marker = markerMap.get(marketId);
+  if (!marker) {
+    return;
+  }
+  const latLng = marker.getLatLng();
+  map.setView(latLng, Math.max(map.getZoom(), 15), { animate: true });
+  marker.openPopup();
+}
 
 function t(key) {
   return I18N[currentLang][key] || I18N.en[key] || key;
@@ -141,7 +169,7 @@ function popupHtml(market) {
         <button class="vote-btn none" data-status="none">${t("voteNone")}</button>
       </div>
       <div class="counts">
-        ${t("counts")}: plenty=${c.plenty}, few=${c.few}, none=${c.none}
+        ${t("counts")}: ${t("votePlenty")}=${c.plenty}, ${t("voteFew")}=${c.few}, ${t("voteNone")}=${c.none}
       </div>
     </div>
   `;
@@ -259,6 +287,8 @@ async function renderMarkets() {
   if (bounds.length > 0) {
     map.fitBounds(bounds, { padding: [18, 18] });
   }
+
+  focusMarketFromQuery();
 }
 
 function setupLanguageSwitcher() {

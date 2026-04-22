@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 import json
-import os
 import re
 import sqlite3
-import time
-import urllib.parse
-import urllib.request
 from datetime import datetime, timedelta, timezone
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import urlsplit
 
 BASE_DIR = Path(__file__).resolve().parent
 SUPERMARKETS_FILE = BASE_DIR / "Supermarkets.txt"
@@ -23,9 +20,22 @@ VOTE_THRESHOLD = 3
 
 VALID_STATUSES = {"plenty", "few", "none"}
 
+CITY_BY_ADDRESS_PATTERN = [
+    (re.compile(r"\bErlangen\b", re.IGNORECASE), "Erlangen"),
+    (re.compile(r"\bFürth\b", re.IGNORECASE), "Fürth"),
+    (re.compile(r"\bNürnberg\b", re.IGNORECASE), "Nürnberg"),
+]
+
 
 def utc_now() -> datetime:
     return datetime.now(timezone.utc)
+
+
+def detect_city(address: str) -> str:
+    for pattern, city_name in CITY_BY_ADDRESS_PATTERN:
+        if pattern.search(address):
+            return city_name
+    return "Unknown"
 
 
 def parse_supermarkets(file_path: Path):
@@ -44,9 +54,9 @@ def parse_supermarkets(file_path: Path):
             if current_brand is None:
                 continue
 
-            city = "Erlangen"
-            zip_code_match = re.search(r"\b(91052|91054|91056|91058)\b", line)
-            zip_code = zip_code_match.group(1) if zip_code_match else ""
+            city = detect_city(line)
+            zip_code_match = re.search(r"\b\d{5}\b", line)
+            zip_code = zip_code_match.group(0) if zip_code_match else ""
             query = f"{line}, Germany"
             markets.append(
                 {
@@ -75,53 +85,18 @@ def save_geocode_cache(path: Path, cache):
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
-def geocode_address(query: str):
-    encoded_query = urllib.parse.quote(query)
-    url = (
-        "https://nominatim.openstreetmap.org/search"
-        f"?q={encoded_query}&format=json&limit=1"
-    )
-    request = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": "FindLEggs/1.0 (lightweight local app)",
-            "Accept": "application/json",
-        },
-    )
-
-    with urllib.request.urlopen(request, timeout=20) as response:
-        data = json.loads(response.read().decode("utf-8"))
-        if not data:
-            return None
-        first = data[0]
-        return {
-            "lat": float(first["lat"]),
-            "lon": float(first["lon"]),
-        }
-
-
 def enrich_with_coordinates(markets):
+    """
+    从缓存中应用地理编码坐标到市场数据。
+    缓存的生成和更新由 geocode_builder.py 脚本独立处理。
+    """
     cache = load_geocode_cache(GEOCODE_CACHE_FILE)
-    changed = False
 
     for market in markets:
         key = market["query"]
-        if key not in cache:
-            try:
-                result = geocode_address(key)
-            except Exception:
-                result = None
-            cache[key] = result
-            changed = True
-            # Respect Nominatim usage policy and avoid burst requests.
-            time.sleep(1.05)
-
         geo = cache.get(key)
         market["lat"] = geo["lat"] if geo else None
         market["lon"] = geo["lon"] if geo else None
-
-    if changed:
-        save_geocode_cache(GEOCODE_CACHE_FILE, cache)
 
     return markets
 
@@ -198,27 +173,35 @@ def vote_details_for_market(conn, market_id):
     return details
 
 
-def determine_display_status(counts):
+def determine_display_status(counts, vote_details):
     max_votes = max(counts.values())
-    if max_votes < VOTE_THRESHOLD:
+    if max_votes == 0:
         return "unknown"
 
     top_statuses = [k for k, v in counts.items() if v == max_votes]
-    if len(top_statuses) != 1:
-        return "unknown"
-    return top_statuses[0]
+    winning_status = top_statuses[0]
+    if len(top_statuses) > 1:
+        for vote in reversed(vote_details):
+            if vote["status"] in top_statuses:
+                winning_status = vote["status"]
+                break
+
+    if max_votes < VOTE_THRESHOLD:
+        return f"{winning_status}_light"
+    return winning_status
 
 
-def market_payload(market, counts):
+def market_payload(market, counts, vote_details):
     payload = {
         "id": market["id"],
         "brand": market["brand"],
         "address": market["address"],
+        "city": market["city"],
         "zip": market["zip"],
         "lat": market["lat"],
         "lon": market["lon"],
         "counts": counts,
-        "display_status": determine_display_status(counts),
+        "display_status": determine_display_status(counts, vote_details),
     }
     return payload
 
@@ -259,17 +242,19 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_GET(self):
-        if self.path == "/" or self.path == "/index.html":
+        route_path = urlsplit(self.path).path
+
+        if route_path == "/" or route_path == "/index.html":
             return self._send_file(BASE_DIR / "index.html", "text/html; charset=utf-8")
-        if self.path == "/admin" or self.path == "/admin.html":
-            return self._send_file(BASE_DIR / "admin.html", "text/html; charset=utf-8")
-        if self.path == "/styles.css":
+        if route_path == "/overview" or route_path == "/overview.html":
+            return self._send_file(BASE_DIR / "overview.html", "text/html; charset=utf-8")
+        if route_path == "/styles.css":
             return self._send_file(BASE_DIR / "styles.css", "text/css; charset=utf-8")
-        if self.path == "/app.js":
+        if route_path == "/app.js":
             return self._send_file(BASE_DIR / "app.js", "application/javascript; charset=utf-8")
-        if self.path == "/admin.js":
-            return self._send_file(BASE_DIR / "admin.js", "application/javascript; charset=utf-8")
-        if self.path == "/api/config":
+        if route_path == "/overview.js":
+            return self._send_file(BASE_DIR / "overview.js", "application/javascript; charset=utf-8")
+        if route_path == "/api/config":
             return self._send_json(
                 {
                     "vote_ttl_hours": VOTE_TTL_HOURS,
@@ -277,15 +262,16 @@ class Handler(BaseHTTPRequestHandler):
                     "valid_statuses": sorted(VALID_STATUSES),
                 }
             )
-        if self.path == "/api/markets":
+        if route_path == "/api/markets":
             return self.handle_get_markets()
-        if self.path == "/api/admin/markets":
+        if route_path == "/api/admin/markets":
             return self.handle_get_admin_markets()
 
         self.send_error(HTTPStatus.NOT_FOUND)
 
     def do_POST(self):
-        if self.path == "/api/vote":
+        route_path = urlsplit(self.path).path
+        if route_path == "/api/vote":
             return self.handle_post_vote()
         self.send_error(HTTPStatus.NOT_FOUND)
 
@@ -298,7 +284,8 @@ class Handler(BaseHTTPRequestHandler):
             payload = []
             for market in self.state.markets:
                 counts = vote_counts_for_market(conn, market["id"])
-                payload.append(market_payload(market, counts))
+                vote_details = vote_details_for_market(conn, market["id"])
+                payload.append(market_payload(market, counts, vote_details))
             self._send_json(payload)
         finally:
             conn.close()
@@ -352,8 +339,9 @@ class Handler(BaseHTTPRequestHandler):
             conn.commit()
 
             counts = vote_counts_for_market(conn, market_id)
+            vote_details = vote_details_for_market(conn, market_id)
             market = self.state.market_by_id[market_id]
-            self._send_json({"ok": True, "market": market_payload(market, counts)})
+            self._send_json({"ok": True, "market": market_payload(market, counts, vote_details)})
         finally:
             conn.close()
 
@@ -369,7 +357,7 @@ class Handler(BaseHTTPRequestHandler):
                 vote_details = vote_details_for_market(conn, market["id"])
                 payload.append(
                     {
-                        **market_payload(market, counts),
+                        **market_payload(market, counts, vote_details),
                         "total_votes": len(vote_details),
                         "vote_details": vote_details,
                     }
@@ -391,8 +379,22 @@ def main():
     if not SUPERMARKETS_FILE.exists():
         raise FileNotFoundError("Supermarkets.txt not found")
 
+    # Check if geocode cache exists and needs updating
+    if not GEOCODE_CACHE_FILE.exists():
+        print("Geocode cache not found. Please run: python geocode_builder.py")
+        print("This will build the initial cache for all addresses.")
+        return
+
     markets = parse_supermarkets(SUPERMARKETS_FILE)
     markets = enrich_with_coordinates(markets)
+    
+    # Check if any markets lack coordinates (all should have been encoded)
+    missing_geo = [m for m in markets if m["lat"] is None or m["lon"] is None]
+    if missing_geo:
+        print(f"Warning: {len(missing_geo)} markets have missing coordinates.")
+        print("Please run: python geocode_builder.py")
+        print("to fill in the missing geocodes.")
+
     init_db()
 
     state = AppState(markets)

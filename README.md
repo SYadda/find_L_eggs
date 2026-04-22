@@ -2,7 +2,7 @@
 
 Language versions: [中文](README_中文.md) | [Deutsch](README_DE.md)
 
-Lightweight web app (no Node.js) to check whether supermarkets in Erlangen have L-size eggs.
+Lightweight web app (no Node.js) to check whether supermarkets in Erlangen, Fürth, and Nürnberg have L-size eggs.
 
 ## Features
 
@@ -16,7 +16,7 @@ Lightweight web app (no Node.js) to check whether supermarkets in Erlangen have 
 - Vote validity: 3 hours
 - Same IP cannot submit the same vote for the same market within 3 hours
 - Main marker color is based on the highest vote count
-- If all vote counts are below threshold (3), marker is gray
+- 0 votes = gray, 1-2 votes = light colors, 3+ votes = dark colors
 - UI supports English, Chinese, and German
 
 ## Run

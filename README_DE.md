@@ -2,7 +2,7 @@
 
 Sprachversionen: [English](README.md) | [中文](README_中文.md)
 
-Eine leichtgewichtige Web-App (ohne Node.js), um zu prüfen, ob Supermärkte in Erlangen Eier der Größe L haben.
+Eine leichtgewichtige Web-App (ohne Node.js), um zu prüfen, ob Supermärkte in Erlangen, Fürth und Nürnberg Eier der Größe L haben.
 
 ## Funktionen
 
@@ -16,7 +16,7 @@ Eine leichtgewichtige Web-App (ohne Node.js), um zu prüfen, ob Supermärkte in 
 - Gueltigkeit einer Stimme: 3 Stunden
 - Dieselbe IP kann innerhalb von 3 Stunden nicht denselben Status fuer denselben Markt erneut abstimmen
 - Markerfarbe basiert auf dem Status mit den meisten Stimmen
-- Wenn alle Status unter dem Schwellwert (3) liegen, wird der Marker grau angezeigt
+- 0 Stimmen = grau, 1-2 Stimmen = helle Farben, 3+ Stimmen = dunkle Farben
 - UI unterstuetzt Englisch, Chinesisch und Deutsch
 
 ## Starten

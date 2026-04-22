@@ -39,5 +39,3 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-# Project local cache/data
-geocode_cache.json
