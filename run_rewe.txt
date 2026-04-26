@@ -1,0 +1,5 @@
+& "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="C:\temp\edge-cdp"
+
+(Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& c:\find_L_eggs\.venv\Scripts\Activate.ps1)
+
+python get_rewe.py

@@ -21,6 +21,16 @@ Eine leichtgewichtige Web-App (ohne Node.js), um zu prüfen, ob Supermärkte in 
 - 0 Stimmen = grau, 1-2 Stimmen = helle Farben, 3+ Stimmen = nur dann dunkle Farben, wenn die neueste Meldung innerhalb von 3 Stunden liegt (sonst helle Farben)
 - UI unterstuetzt Englisch, Chinesisch und Deutsch
 
+## Update
+
+- Erste vorlaeufige Unterstuetzung fuer Supermaerkte in ganz Deutschland wurde hinzugefuegt.
+
+## To-do-Liste
+
+- Aktuell wird nur REWE unterstuetzt; weitere Supermarktketten folgen spaeter.
+- Fuer einige Supermarktadressen koennen ueber OpenStreetMap derzeit keine Koordinaten ermittelt werden.
+- Einige Maerkte fehlen noch in der Supermarktliste der `overview`-Seite; gleichnamige Staedte muessen in bestimmten Faellen noch geprueft werden.
+
 ## Starten
 
 1. Stelle sicher, dass Python 3 installiert ist.

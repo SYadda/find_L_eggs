@@ -248,6 +248,19 @@ main {
   color: var(--muted);
 }
 
+.nearby-cities {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nearby-city-buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .city-nav {
   display: inline-flex;
   gap: 6px;
@@ -273,6 +286,11 @@ main {
 
 .city-btn:hover {
   filter: brightness(0.97);
+}
+
+.nearby-city-btn {
+  font-size: 0.82rem;
+  padding: 5px 9px;
 }
 
 .admin-table-wrap {

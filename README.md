@@ -19,6 +19,16 @@ Lightweight web app (no Node.js) to check whether supermarkets in Erlangen, Für
 - 0 votes = gray, 1-2 votes = light colors, 3+ votes = dark colors only if the latest submission is within 3 hours (otherwise light colors)
 - UI supports English, Chinese, and German
 
+## Update
+
+- Initial support for supermarkets across Germany has been added.
+
+## To-do list
+
+- Only REWE is supported for now; more supermarket chains will be added later.
+- Coordinates cannot yet be resolved from OpenStreetMap for some supermarket addresses.
+- Some supermarkets are still missing from the `overview` supermarket list; same-name cities in certain cases still need verification.
+
 ## Run
 
 1. Make sure Python 3 is installed.

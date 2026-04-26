@@ -90,6 +90,54 @@ const I18N = {
 let currentLang = "en";
 const markerMap = new Map();
 let map;
+let initialViewport = null;
+
+const MAP_VIEW_STORAGE_KEY = "find_l_eggs_map_view";
+
+function loadSavedViewport() {
+  try {
+    const raw = localStorage.getItem(MAP_VIEW_STORAGE_KEY);
+    if (!raw) {
+      return null;
+    }
+    const parsed = JSON.parse(raw);
+    const lat = Number(parsed?.lat);
+    const lon = Number(parsed?.lon);
+    const zoom = Number(parsed?.zoom);
+
+    const validLat = Number.isFinite(lat) && lat >= -90 && lat <= 90;
+    const validLon = Number.isFinite(lon) && lon >= -180 && lon <= 180;
+    const validZoom = Number.isFinite(zoom) && zoom >= 1 && zoom <= 19;
+    if (!validLat || !validLon || !validZoom) {
+      return null;
+    }
+
+    return {
+      lat,
+      lon,
+      zoom,
+    };
+  } catch (_err) {
+    return null;
+  }
+}
+
+function saveCurrentViewport() {
+  if (!map) {
+    return;
+  }
+  try {
+    const center = map.getCenter();
+    const payload = {
+      lat: Number(center.lat.toFixed(6)),
+      lon: Number(center.lng.toFixed(6)),
+      zoom: map.getZoom(),
+    };
+    localStorage.setItem(MAP_VIEW_STORAGE_KEY, JSON.stringify(payload));
+  } catch (_err) {
+    // Ignore storage errors (e.g. private mode or disabled storage).
+  }
+}
 
 function focusedMarketIdFromQuery() {
   const raw = new URLSearchParams(window.location.search).get("focusMarket");
@@ -256,15 +304,21 @@ function attachPopupVoteHandler() {
 }
 
 function initMap() {
+  initialViewport = loadSavedViewport();
+  const center = initialViewport ? [initialViewport.lat, initialViewport.lon] : [49.5972, 11.0045];
+  const zoom = initialViewport ? initialViewport.zoom : 12.5;
+
   map = L.map("map", {
-    center: [49.5972, 11.0045],
-    zoom: 12.5,
+    center,
+    zoom,
   });
 
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
+
+  map.on("moveend zoomend", saveCurrentViewport);
 }
 
 async function renderMarkets() {
@@ -284,7 +338,8 @@ async function renderMarkets() {
     bounds.push([market.lat, market.lon]);
   }
 
-  if (bounds.length > 0) {
+  const hasFocusMarket = Boolean(focusedMarketIdFromQuery());
+  if (!initialViewport && !hasFocusMarket && bounds.length > 0) {
     map.fitBounds(bounds, { padding: [18, 18] });
   }
 

@@ -5,20 +5,21 @@ const ADMIN_I18N = {
     langLabel: "Language",
     backToMap: "Back to map",
     generatedAt: "Generated at:",
+    currentCity: "Current city:",
+    nearbyCities: "Nearby cities:",
     thMarket: "Market",
     thAddress: "Address",
     thSummary: "Summary",
     thDetails: "Active votes (expires in)",
     noVotes: "No active votes",
+    noValidData: "No valid data yet",
+    showAll: "Show all supermarkets",
     statusPlenty: "plenty",
     statusFew: "few",
     statusNone: "none",
-    displayPlenty: "Plenty",
-    displayFew: "Few",
-    displayNone: "None",
-    displayUnknown: "Unknown",
     totalVotes: "Total",
     copied: "Address copied",
+    loadFailed: "Failed to load overview data.",
   },
   zh: {
     title: "寻找大鸡蛋 - 概览页",
@@ -26,20 +27,21 @@ const ADMIN_I18N = {
     langLabel: "语言",
     backToMap: "返回地图",
     generatedAt: "生成时间：",
+    currentCity: "当前城市：",
+    nearbyCities: "临近城市：",
     thMarket: "超市",
     thAddress: "地址",
     thSummary: "汇总",
     thDetails: "有效投票（到期倒计时）",
     noVotes: "暂无有效投票",
+    noValidData: "暂无有效数据",
+    showAll: "查看全部超市",
     statusPlenty: "大量",
     statusFew: "少量",
     statusNone: "没有",
-    displayPlenty: "大量",
-    displayFew: "少量",
-    displayNone: "没有",
-    displayUnknown: "未知",
     totalVotes: "总票数",
     copied: "地址已复制",
+    loadFailed: "概览数据加载失败。",
   },
   de: {
     title: "Finde Eier der Größe L - Übersicht",
@@ -47,27 +49,31 @@ const ADMIN_I18N = {
     langLabel: "Sprache",
     backToMap: "Zurueck zur Karte",
     generatedAt: "Erstellt um:",
+    currentCity: "Aktuelle Stadt:",
+    nearbyCities: "Nahe Städte:",
     thMarket: "Markt",
     thAddress: "Adresse",
     thSummary: "Uebersicht",
     thDetails: "Aktive Stimmen (Ablauf in)",
     noVotes: "Keine aktiven Stimmen",
+    noValidData: "Noch keine gueltigen Daten",
+    showAll: "Alle Supermaerkte anzeigen",
     statusPlenty: "viele",
     statusFew: "wenige",
     statusNone: "keine",
-    displayPlenty: "Viele",
-    displayFew: "Wenige",
-    displayNone: "Keine",
-    displayUnknown: "Unbekannt",
     totalVotes: "Gesamt",
     copied: "Adresse kopiert",
+    loadFailed: "Uebersichtsdaten konnten nicht geladen werden.",
   },
 };
+
+const MAP_VIEW_STORAGE_KEY = "find_l_eggs_map_view";
+const FALLBACK_CENTER = { lat: 49.5972, lon: 11.0045 };
 
 let adminLang = "en";
 let adminData = null;
 let countdownTimer = null;
-let currentCity = "Erlangen";
+let includeAll = false;
 
 function ta(key) {
   return ADMIN_I18N[adminLang][key] || ADMIN_I18N.en[key] || key;
@@ -98,19 +104,6 @@ function localizedStatus(status) {
   return ta("statusNone");
 }
 
-function localizedDisplayStatus(status) {
-  if (status === "plenty" || status === "plenty_light") {
-    return ta("displayPlenty");
-  }
-  if (status === "few" || status === "few_light") {
-    return ta("displayFew");
-  }
-  if (status === "none" || status === "none_light") {
-    return ta("displayNone");
-  }
-  return ta("displayUnknown");
-}
-
 function applyAdminLanguage() {
   document.title = ta("title");
   setAdminText("adminTitle", "title");
@@ -118,10 +111,13 @@ function applyAdminLanguage() {
   setAdminText("adminLangLabel", "langLabel");
   setAdminText("backToMap", "backToMap");
   setAdminText("generatedAtLabel", "generatedAt");
+  setAdminText("currentCityLabel", "currentCity");
+  setAdminText("nearbyCitiesLabel", "nearbyCities");
   setAdminText("thMarket", "thMarket");
   setAdminText("thAddress", "thAddress");
   setAdminText("thSummary", "thSummary");
   setAdminText("thDetails", "thDetails");
+  setAdminText("showAllBtn", "showAll");
 }
 
 function statusPriority(displayStatus) {
@@ -143,6 +139,37 @@ function openMarketOnMap(marketId) {
   window.location.href = url.toString();
 }
 
+function setMapCenter(lat, lon) {
+  localStorage.setItem(MAP_VIEW_STORAGE_KEY, JSON.stringify({ lat, lon }));
+}
+
+async function openNearbyCity(city) {
+  if (!city) {
+    return;
+  }
+  includeAll = false;
+  setMapCenter(city.lat, city.lon);
+  await refreshAdminData();
+}
+
+function loadMapCenter() {
+  try {
+    const raw = localStorage.getItem(MAP_VIEW_STORAGE_KEY);
+    if (!raw) {
+      return FALLBACK_CENTER;
+    }
+    const parsed = JSON.parse(raw);
+    const lat = Number(parsed?.lat);
+    const lon = Number(parsed?.lon);
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+      return FALLBACK_CENTER;
+    }
+    return { lat, lon };
+  } catch (_err) {
+    return FALLBACK_CENTER;
+  }
+}
+
 async function copyAddress(text) {
   if (!text) {
     return;
@@ -160,14 +187,6 @@ async function copyAddress(text) {
   area.select();
   document.execCommand("copy");
   document.body.removeChild(area);
-}
-
-function applyCityButtonsState() {
-  document.querySelectorAll(".city-btn").forEach((btn) => {
-    const isActive = btn.dataset.city === currentCity;
-    btn.classList.toggle("active", isActive);
-    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
-  });
 }
 
 function showAdminToast(text) {
@@ -197,29 +216,66 @@ function showAdminToast(text) {
   }, 1200);
 }
 
-async function fetchAdminMarkets() {
-  const res = await fetch("/api/admin/markets");
+async function fetchOverviewMarkets() {
+  const center = loadMapCenter();
+  const res = await fetch("/api/overview/markets", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      lat: center.lat,
+      lon: center.lon,
+      include_all: includeAll,
+    }),
+  });
   if (!res.ok) {
-    throw new Error("failed to fetch admin markets");
+    throw new Error("failed to fetch overview markets");
   }
   return res.json();
+}
+
+function renderNearbyCities(data) {
+  const wrap = document.getElementById("nearbyCitiesWrap");
+  const buttons = document.getElementById("nearbyCityButtons");
+  if (!wrap || !buttons) {
+    return;
+  }
+
+  buttons.innerHTML = "";
+  const nearbyCities = Array.isArray(data?.nearby_cities) ? data.nearby_cities : [];
+  if (!nearbyCities.length) {
+    wrap.style.display = "none";
+    return;
+  }
+
+  wrap.style.display = "inline-flex";
+  for (const city of nearbyCities) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "city-btn nearby-city-btn";
+    btn.textContent = city.city;
+    btn.title = `${city.city} (${city.distance_km} km)`;
+    btn.addEventListener("click", () => {
+      openNearbyCity(city).catch(() => undefined);
+    });
+    buttons.appendChild(btn);
+  }
 }
 
 function renderRows(data) {
   const body = document.getElementById("adminTableBody");
   body.innerHTML = "";
 
-  const marketsInCity = data.markets
-    .filter((market) => market.city === currentCity)
-    .sort((a, b) => {
-      const priorityDelta = statusPriority(a.display_status) - statusPriority(b.display_status);
-      if (priorityDelta !== 0) {
-        return priorityDelta;
-      }
-      return b.total_votes - a.total_votes;
-    });
+  const markets = [...data.markets].sort((a, b) => {
+    const priorityDelta = statusPriority(a.display_status) - statusPriority(b.display_status);
+    if (priorityDelta !== 0) {
+      return priorityDelta;
+    }
+    return b.total_votes - a.total_votes;
+  });
 
-  for (const market of marketsInCity) {
+  for (const market of markets) {
     const tr = document.createElement("tr");
 
     const tdMarket = document.createElement("td");
@@ -228,7 +284,6 @@ function renderRows(data) {
     const tdAddress = document.createElement("td");
     tdAddress.textContent = market.address;
     tdAddress.className = "admin-address";
-    tdAddress.title = ta("notice1");
     tdAddress.style.cursor = "pointer";
     tdAddress.addEventListener("click", () => {
       copyAddress(market.address)
@@ -240,7 +295,7 @@ function renderRows(data) {
     });
 
     const tdSummary = document.createElement("td");
-    tdSummary.textContent = `${ta("totalVotes")}=${market.total_votes}, ${localizedStatus("plenty")}=${market.counts.plenty}, ${localizedStatus("few")}=${market.counts.few}, ${localizedStatus("none")}=${market.counts.none}`;
+    tdSummary.textContent = `${ta("totalVotes") }=${market.total_votes}, ${localizedStatus("plenty") }=${market.counts.plenty}, ${localizedStatus("few") }=${market.counts.few}, ${localizedStatus("none") }=${market.counts.none}`;
 
     const tdDetails = document.createElement("td");
     if (!market.vote_details.length) {
@@ -265,11 +320,11 @@ function renderRows(data) {
     body.appendChild(tr);
   }
 
-  if (!marketsInCity.length) {
+  if (!markets.length) {
     const emptyRow = document.createElement("tr");
     const emptyCell = document.createElement("td");
     emptyCell.colSpan = 4;
-    emptyCell.textContent = ta("noVotes");
+    emptyCell.textContent = includeAll ? ta("noVotes") : ta("noValidData");
     emptyRow.appendChild(emptyCell);
     body.appendChild(emptyRow);
   }
@@ -288,10 +343,24 @@ function updateCountdowns() {
   });
 }
 
-async function refreshAdminData() {
-  adminData = await fetchAdminMarkets();
+function renderMeta(data) {
   const generatedAt = document.getElementById("generatedAtValue");
-  generatedAt.textContent = new Date(adminData.generated_at).toLocaleString();
+  generatedAt.textContent = new Date(data.generated_at).toLocaleString();
+
+  const cityValue = document.getElementById("currentCityValue");
+  cityValue.textContent = data.city || "-";
+
+  renderNearbyCities(data);
+
+  const showAllBtn = document.getElementById("showAllBtn");
+  showAllBtn.style.display = includeAll ? "none" : "inline-block";
+  showAllBtn.classList.toggle("active", includeAll);
+  showAllBtn.setAttribute("aria-pressed", includeAll ? "true" : "false");
+}
+
+async function refreshAdminData() {
+  adminData = await fetchOverviewMarkets();
+  renderMeta(adminData);
   renderRows(adminData);
   updateCountdowns();
 }
@@ -309,6 +378,7 @@ function setupLanguage() {
       });
 
       if (adminData) {
+        renderMeta(adminData);
         renderRows(adminData);
         updateCountdowns();
       }
@@ -316,24 +386,20 @@ function setupLanguage() {
   });
 }
 
-function setupCityNavigation() {
-  applyCityButtonsState();
-  document.querySelectorAll(".city-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      currentCity = btn.dataset.city || "Erlangen";
-      applyCityButtonsState();
-      if (adminData) {
-        renderRows(adminData);
-        updateCountdowns();
-      }
-    });
+function setupShowAllButton() {
+  const btn = document.getElementById("showAllBtn");
+  btn.addEventListener("click", async () => {
+    includeAll = true;
+    btn.classList.add("active");
+    btn.setAttribute("aria-pressed", "true");
+    await refreshAdminData();
   });
 }
 
 async function main() {
   applyAdminLanguage();
   setupLanguage();
-  setupCityNavigation();
+  setupShowAllButton();
   await refreshAdminData();
 
   if (countdownTimer) {
@@ -347,5 +413,5 @@ async function main() {
 
 main().catch(() => {
   const body = document.getElementById("adminTableBody");
-  body.innerHTML = '<tr><td colspan="4">Failed to load overview data.</td></tr>';
+  body.innerHTML = `<tr><td colspan="4">${ta("loadFailed")}</td></tr>`;
 });

@@ -25,11 +25,13 @@
 
     <main class="admin-main">
       <div class="admin-toolbar">
-        <div class="city-nav" role="group" aria-label="City navigation">
-          <button type="button" class="city-btn active" data-city="Erlangen" aria-pressed="true">Erlangen</button>
-          <button type="button" class="city-btn" data-city="Fürth" aria-pressed="false">Fürth</button>
-          <button type="button" class="city-btn" data-city="Nürnberg" aria-pressed="false">Nürnberg</button>
+        <span id="currentCityLabel">Current city:</span>
+        <strong id="currentCityValue">-</strong>
+        <div class="nearby-cities" id="nearbyCitiesWrap">
+          <span id="nearbyCitiesLabel">Nearby cities:</span>
+          <div class="nearby-city-buttons" id="nearbyCityButtons"></div>
         </div>
+        <button type="button" id="showAllBtn" class="city-btn">Show all supermarkets</button>
         <span id="generatedAtLabel">Generated at:</span>
         <span id="generatedAtValue">-</span>
       </div>
