@@ -24,6 +24,29 @@ CITY_NAME_FILE = BASE_DIR / "city_name.txt"
 
 DEFAULT_CITY = "Erlangen"
 
+# Brand switches: set to False to ignore this supermarket brand entirely.
+ENABLE_EDEKA = True
+ENABLE_REWE = False
+ENABLE_KAUFLAND = False
+ENABLE_ALDI_NORD = True
+ENABLE_ALDI_SUED = False
+ENABLE_LIDL = True
+ENABLE_NETTO = True
+ENABLE_PENNY = True
+ENABLE_NORMA = True
+
+BRAND_ENABLED = {
+    "Edeka": ENABLE_EDEKA,
+    "Rewe": ENABLE_REWE,
+    "Kaufland": ENABLE_KAUFLAND,
+    "Aldi Nord": ENABLE_ALDI_NORD,
+    "Aldi Süd": ENABLE_ALDI_SUED,
+    "Lidl": ENABLE_LIDL,
+    "Netto": ENABLE_NETTO,
+    "Penny": ENABLE_PENNY,
+    "Norma": ENABLE_NORMA,
+}
+
 GERMANY_BOUNDS = {
     "min_lat": 47.0,
     "max_lat": 55.5,
@@ -33,8 +56,12 @@ GERMANY_BOUNDS = {
 
 GRID_CELL_SIZE = 0.25
 MARKET_CHECKPOINT_INTERVAL = 10
+DIRECT_COORD_BRANDS = {"Kaufland"}
 
 ZIP_CITY_REGEX = re.compile(r"\b\d{5}\s+([^,]+)$")
+TRAILING_COORDS_REGEX = re.compile(
+    r"^(?P<address>.*?),\s*(?P<lat>-?\d+(?:\.\d+)?),\s*(?P<lon>-?\d+(?:\.\d+)?)$"
+)
 
 
 def normalize_city_name(city: str) -> str:
@@ -87,19 +114,33 @@ def parse_supermarkets(file_path: Path):
                 continue
             if current_brand is None:
                 continue
+            if not BRAND_ENABLED.get(current_brand, True):
+                continue
 
-            city = detect_city(line)
-            zip_code_match = re.search(r"\b\d{5}\b", line)
+            coords_match = TRAILING_COORDS_REGEX.match(line)
+            if coords_match:
+                address = coords_match.group("address").strip()
+                provided_geo = {
+                    "lat": float(coords_match.group("lat")),
+                    "lon": float(coords_match.group("lon")),
+                }
+            else:
+                address = line
+                provided_geo = None
+
+            city = detect_city(address)
+            zip_code_match = re.search(r"\b\d{5}\b", address)
             zip_code = zip_code_match.group(0) if zip_code_match else ""
-            query = f"{line}, Germany"
+            query = f"{address}, Germany"
             markets.append(
                 {
                     "id": market_id,
                     "brand": current_brand,
-                    "address": line,
+                    "address": address,
                     "city": city,
                     "zip": zip_code,
                     "query": query,
+                    "provided_geo": provided_geo,
                 }
             )
             market_id += 1
@@ -121,12 +162,40 @@ def save_geocode_cache(path: Path, cache):
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
-def save_market_checkpoint(path: Path, base_cache: dict, market_geocode: Dict[str, Optional[Dict[str, float]]]):
-    """在完整构建结束前，先把已处理的超市坐标进度写入缓存，降低中途中断损失。"""
-    checkpoint_cache = dict(base_cache) if isinstance(base_cache, dict) else {}
-    for key, geo in market_geocode.items():
-        checkpoint_cache[key] = geo
-    save_geocode_cache(path, checkpoint_cache)
+def write_market_record_if_missing(path: Path, market: dict, geo: Optional[Dict[str, float]]) -> bool:
+    """Write one market record immediately if it does not exist in structured cache."""
+    cache = load_geocode_cache(path) if path.exists() else {}
+    if not isinstance(cache, dict):
+        cache = {}
+
+    cities = cache.setdefault("cities", {})
+    if not isinstance(cities, dict):
+        cities = {}
+        cache["cities"] = cities
+
+    city_name = market["city"] or DEFAULT_CITY
+    city_entry = cities.setdefault(city_name, {})
+    if not isinstance(city_entry, dict):
+        city_entry = {}
+        cities[city_name] = city_entry
+
+    brand = market["brand"]
+    brand_bucket = city_entry.setdefault(brand, {})
+    if not isinstance(brand_bucket, dict):
+        brand_bucket = {}
+        city_entry[brand] = brand_bucket
+
+    address = market["address"]
+    if address in brand_bucket:
+        return False
+
+    brand_bucket[address] = {
+        "lat": geo["lat"] if geo else None,
+        "lon": geo["lon"] if geo else None,
+        "zip": market["zip"],
+    }
+    save_geocode_cache(path, cache)
+    return True
 
 
 def geocode_address(query: str):
@@ -162,7 +231,7 @@ def geocode_address(query: str):
 def parse_cached_market_geo(cache_obj: dict):
     """
     仅读取新格式缓存：
-    - { "cities": { city: {"markets": { address: {"lat":..., "lon":...}}}}}
+    - { "cities": { city: { brand: { address: {"lat":..., "lon":...}}}}}
 
     说明：
     - 如果 lat/lon 为 None，视为无效缓存，不写入 market_geo（后续会重新 geocode）
@@ -174,21 +243,23 @@ def parse_cached_market_geo(cache_obj: dict):
         for city_entry in cities.values():
             if not isinstance(city_entry, dict):
                 continue
-            markets = city_entry.get("markets")
-            if not isinstance(markets, dict):
-                continue
-            for address, geo in markets.items():
-                if not isinstance(geo, dict):
+            # 迭代所有品牌（brand）
+            for brand_entry in city_entry.values():
+                if not isinstance(brand_entry, dict):
                     continue
-                lat_raw = geo.get("lat")
-                lon_raw = geo.get("lon")
-                if lat_raw is None or lon_raw is None:
-                    continue
-                try:
-                    market_geo[address] = {"lat": float(lat_raw), "lon": float(lon_raw)}
-                except (TypeError, ValueError):
-                    # 非法坐标按无效缓存处理，后续会重新 geocode
-                    continue
+                # 迭代品牌下的所有地址
+                for address, geo in brand_entry.items():
+                    if not isinstance(geo, dict):
+                        continue
+                    lat_raw = geo.get("lat")
+                    lon_raw = geo.get("lon")
+                    if lat_raw is None or lon_raw is None:
+                        continue
+                    try:
+                        market_geo[address] = {"lat": float(lat_raw), "lon": float(lon_raw)}
+                    except (TypeError, ValueError):
+                        # 非法坐标按无效缓存处理，后续会重新 geocode
+                        continue
 
     return market_geo
 
@@ -334,43 +405,6 @@ def build_spatial_index(city_centers: Dict[str, Dict[str, float]]):
     }
 
 
-def build_structured_cache(
-    markets,
-    market_geocode: Dict[str, Dict[str, float]],
-    spatial_index: dict,
-):
-    city_buckets: Dict[str, Dict[str, dict]] = {}
-    for market in markets:
-        city = market["city"] or DEFAULT_CITY
-        city_buckets.setdefault(city, {})
-        geo = market_geocode.get(market["query"])
-        if geo is None:
-            geo = market_geocode.get(market["address"])
-        city_buckets[city][market["address"]] = {
-            "lat": geo["lat"] if geo else None,
-            "lon": geo["lon"] if geo else None,
-            "brand": market["brand"],
-            "zip": market["zip"],
-        }
-
-    cities = {
-        city: {
-            "markets": addresses,
-        }
-        for city, addresses in sorted(city_buckets.items())
-    }
-
-    return {
-        "meta": {
-            "schema_version": 3,
-            "updated_at": datetime.now(timezone.utc).isoformat(),
-            "default_city": DEFAULT_CITY,
-        },
-        "cities": cities,
-        "spatial_index": spatial_index,
-    }
-
-
 def build_or_update_cache():
     """
     生成或更新地理编码缓存。
@@ -393,11 +427,9 @@ def build_or_update_cache():
     failed_count = 0
     skipped_count = 0
     newly_geocoded = 0
-    geocoded_since_last_checkpoint = 0
-
-    print(f"Processing {total} markets...")
-    print(f"Cached market geocodes before: {len(market_geo)}")
-    print()
+    from_file_coords_count = 0
+    inserted_record_count = 0
+    cached_market_count_before = len(market_geo)
 
     for idx, market in enumerate(markets, 1):
         key = market["query"]
@@ -411,6 +443,30 @@ def build_or_update_cache():
             success_count += 1
             skipped_count += 1
             print(f"[{idx}/{total}] SKIP (cached) {market['brand']} - {market['address']}")
+            if write_market_record_if_missing(GEOCODE_CACHE_FILE, market, cached_geo):
+                inserted_record_count += 1
+            continue
+
+        if market["brand"] in DIRECT_COORD_BRANDS:
+            provided_geo = market.get("provided_geo")
+            if isinstance(provided_geo, dict):
+                market_geo[key] = provided_geo
+                market_geo[address_key] = provided_geo
+                success_count += 1
+                from_file_coords_count += 1
+                print(
+                    f"[{idx}/{total}] DIRECT COORDS {market['brand']} - {market['address']}"
+                    f" -> ({provided_geo['lat']:.6f}, {provided_geo['lon']:.6f})"
+                )
+            else:
+                market_geo[key] = None
+                market_geo[address_key] = None
+                failed_count += 1
+                print(
+                    f"[{idx}/{total}] MISSING DIRECT COORDS {market['brand']} - {market['address']}"
+                )
+            if write_market_record_if_missing(GEOCODE_CACHE_FILE, market, market_geo.get(key)):
+                inserted_record_count += 1
             continue
 
         # 如果在缓存中但是 null，或者不在缓存中，需要编码
@@ -429,47 +485,10 @@ def build_or_update_cache():
             failed_count += 1
             print("        Failed")
 
-        # Respect Nominatim usage policy
-        geocoded_since_last_checkpoint += 1
-        if geocoded_since_last_checkpoint >= MARKET_CHECKPOINT_INTERVAL:
-            save_market_checkpoint(GEOCODE_CACHE_FILE, cache, market_geo)
-            print(
-                f"        Checkpoint saved: {len(market_geo)} cached entries "
-                f"(every {MARKET_CHECKPOINT_INTERVAL} geocoded markets)"
-            )
-            geocoded_since_last_checkpoint = 0
+        if write_market_record_if_missing(GEOCODE_CACHE_FILE, market, market_geo.get(key)):
+            inserted_record_count += 1
 
         time.sleep(1.05)
-
-    print()
-    print("=" * 50)
-    print("Geocoding Summary")
-    print("=" * 50)
-    print(f"Total markets: {total}")
-    print(f"Successful (cached + newly): {success_count}")
-    print(f"  - Skipped (already cached): {skipped_count}")
-    print(f"  - Newly geocoded: {newly_geocoded}")
-    print(f"Failed: {failed_count}")
-    print(f"Cached market geocodes after: {len(market_geo)}")
-    print(f"Timestamp: {datetime.now(timezone.utc).isoformat()}")
-    print()
-
-    if geocoded_since_last_checkpoint > 0:
-        save_market_checkpoint(GEOCODE_CACHE_FILE, cache, market_geo)
-        print(
-            f"Final market checkpoint saved: {len(market_geo)} cached entries "
-            "(flush remaining geocoded markets before city-center phase)"
-        )
-        print()
-
-    print("City center diff summary")
-    print(f"  - In city_name.txt (plus default): {len(city_diff['target_cities'])}")
-    print(f"  - Already cached and kept: {city_diff['kept_count']}")
-    print(f"  - Added: {len(city_diff['added_cities'])}")
-    print(f"  - Removed: {len(city_diff['removed_cities'])}")
-    if city_diff["removed_cities"]:
-        print(f"  - Removed cities: {', '.join(city_diff['removed_cities'])}")
-    print()
 
     print(f"Building city centers incrementally for {len(city_diff['target_cities'])} cities...")
     for idx, city in enumerate(city_diff["target_cities"], 1):
@@ -490,9 +509,45 @@ def build_or_update_cache():
             city_centers[DEFAULT_CITY] = default_geo
 
     spatial_index = build_spatial_index(city_centers)
-    structured_cache = build_structured_cache(markets, market_geo, spatial_index)
+    final_cache = load_geocode_cache(GEOCODE_CACHE_FILE)
+    if not isinstance(final_cache, dict):
+        final_cache = {}
+    final_cache["meta"] = {
+        "schema_version": 3,
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "default_city": DEFAULT_CITY,
+    }
+    final_cache["spatial_index"] = spatial_index
+    if "cities" not in final_cache or not isinstance(final_cache.get("cities"), dict):
+        final_cache["cities"] = {}
 
-    save_geocode_cache(GEOCODE_CACHE_FILE, structured_cache)
+    save_geocode_cache(GEOCODE_CACHE_FILE, final_cache)
+
+    print()
+    print("=" * 50)
+    print("Geocoding Summary")
+    print("=" * 50)
+    print(f"Total markets: {total}")
+    print(f"Successful (cached + newly): {success_count}")
+    print(f"  - Skipped (already cached): {skipped_count}")
+    print(f"  - Loaded from file coords: {from_file_coords_count}")
+    print(f"  - Newly geocoded: {newly_geocoded}")
+    print(f"  - Inserted new market records to cache: {inserted_record_count}")
+    print(f"Failed: {failed_count}")
+    print(f"Cached market geocodes before: {cached_market_count_before}")
+    print(f"Cached market geocodes after: {len(market_geo)}")
+    print(f"Timestamp: {datetime.now(timezone.utc).isoformat()}")
+    print()
+
+    print("City center diff summary")
+    print(f"  - In city_name.txt (plus default): {len(city_diff['target_cities'])}")
+    print(f"  - Already cached and kept: {city_diff['kept_count']}")
+    print(f"  - Added: {len(city_diff['added_cities'])}")
+    print(f"  - Removed: {len(city_diff['removed_cities'])}")
+    if city_diff["removed_cities"]:
+        print(f"  - Removed cities: {', '.join(city_diff['removed_cities'])}")
+    print()
+
     print(f"Cache saved to {GEOCODE_CACHE_FILE}")
 
 

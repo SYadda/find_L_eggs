@@ -1,0 +1,223 @@
+Karl-Liebknecht-Straße 13, 10178 Berlin, 52.5223268, 13.40808
+Brunnenstraße 105-109, 13355 Berlin, 52.5479715, 13.3897257
+Storkower Straße 139, 10407 Berlin, 52.5334765, 13.4565806
+Hermann-Blankenstein-Straße 38, 10249 Berlin, 52.5240105, 13.461711
+Perleberger Straße 42 A, 10559 Berlin, 52.529008, 13.3441626
+Karl-Marx-Straße 66, 12043 Berlin, 52.4821639, 13.4329956
+Frankfurter Allee 113-117, 10365 Berlin, 52.5138556, 13.476104
+Residenzstraße 85, 13409 Berlin, 52.558996, 13.3729151
+Marktstraße 6, 10317 Berlin, 52.503962, 13.4726729
+Müllerstraße 123-125, 13349 Berlin, 52.5532767, 13.3464832
+Breite Straße 19-21 A, 13187 Berlin, 52.5698241, 13.4043873
+Romain-Rolland-Straße 13, 13089 Berlin, 52.5643312, 13.4450862
+Schöneberger Straße 7, 12103 Berlin, 52.4676063, 13.3770679
+Karl-Marx-Straße 231-235, 12055 Berlin, 52.468749, 13.442769
+Sewanstraße 4, 6, 10319 Berlin, 52.4996863, 13.4970425
+Bessemerstraße 57-75, 12103 Berlin, 52.4618383, 13.3671338
+Ollenhauerstraße 122, 13403 Berlin, 52.5676767, 13.329041
+Hauptstraße 9-10, 13055 Berlin, 52.5482784, 13.5034572
+Märkische Allee 166, 168, 172, 12681 Berlin, 52.5330942, 13.5383818
+Senftenberger Ring 15-17, 13439 Berlin, 52.5988205, 13.3547006
+Gutschmidtstraße 19, 12359 Berlin, 52.4367844, 13.4481196
+Schnellerstraße 21, 12439 Berlin, 52.4564192, 13.5092086
+Eichhorster Weg 96, 13435 Berlin, 52.6033868, 13.3349502
+Weißenhöher Straße 88-108, 12683 Berlin, 52.5066989, 13.5584569
+Johannisthaler Chaussee 295-327, 12351 Berlin, 52.4302535, 13.4559582
+Buckower Chaussee 100-102, 12277 Berlin, 52.4104916, 13.3818126
+Ostpreußendamm 60, 12207 Berlin, 52.4230645, 13.3127456
+Am Juliusturm 40-46, 13599 Berlin, 52.5376209, 13.2191487
+Pichelswerderstraße 6, 13597 Berlin, 52.529616, 13.2134715
+Rudower Chaussee 12, 12489 Berlin, 52.4329283, 13.5357004
+Goerzallee 195, 14167 Berlin, 52.4173517, 13.2860974
+Walter-Friedrich-Straße 4, 13125 Berlin, 52.6344932, 13.4959412
+Friedrichshagener Straße 38-42, 12555 Berlin, 52.4522055, 13.5867248
+Grünhofer Weg 9, 13581 Berlin, 52.5332485, 13.1892761
+Wilhelmstraße 21-25, 13593 Berlin, 52.52112, 13.1853795
+Beim Strohhause 8, 20097 Hamburg, 53.5525841, 10.0199275
+Stresemannstraße 300, 22761 Hamburg, 53.5634011, 9.9318343
+Nedderfeld 70, 22529 Hamburg, 53.6010288, 9.9751914
+Helbingtwiete 7/9, 22047 Hamburg, 53.5877138, 10.0955916
+Eckhoffplatz 1, 22547 Hamburg, 53.591595, 9.8742839
+Bramfelder Dorfplatz 18, 22179 Hamburg, 53.6127115, 10.0786119
+Berner Heerweg 173-175, 22159 Hamburg, 53.6051975, 10.1183564
+Krohnstieg 4, 22415 Hamburg, 53.6497707, 10.0161434
+Marktpassage 5, 21149 Hamburg, 53.470613, 9.852853
+Bergedorfer Straße 106, 21029 Hamburg, 53.4879188, 10.2074488
+Berg-am-Laim-Straße 117, 81673 München, 48.1295951, 11.6260178
+Thomas-Dehler-Straße 10, 81737 München, 48.1000044, 11.6436324
+Margot-Kalinke-Straße 4, 80939 München, 48.1947906, 11.5972031
+Bunzlauer Platz 5-7, 80992 München, 48.1793908, 11.5057513
+Schleißheimer Straße 506, 80933 München, 48.21291, 11.5636815
+Kalker Hauptstraße 112, 51103 Köln, 50.9375054, 7.0016502
+Thebäerstraße 9, 50823 Köln, 50.9466244, 6.9216563
+Gremberger Straße 200, 51105 Köln, 50.9258294, 7.0079785
+Boltensternstraße 104-112, 50735 Köln, 50.9728624, 6.977087
+Frankfurter Straße 87 A, 51065 Köln, 50.9582755, 7.0146022
+Ostmerheimer Straße 198, 51109 Köln, 50.9419841, 7.050456
+Wächtersbacher Straße 75, 60386 Frankfurt am Main, 50.1319846, 8.7498206
+Mainzer Landstraße 683, 65933 Frankfurt am Main, 50.0998058, 8.5872564
+Josef-Gesing-Straße 6, 15234 Frankfurt (Oder), 52.3497035, 14.5188354
+Spitzkrugring 1 A, 15234 Frankfurt (Oder), 52.3627104, 14.5223811
+Heilbronner Straße 30, 15230 Frankfurt (Oder), 52.3421175, 14.5472625
+Friedrichstraße 152, 40217 Düsseldorf, 51.2088133, 6.7780702
+Hilde-und-Joseph-Neyses-Platz 5, 40476 Düsseldorf, 51.2504069, 6.7907059
+Wildunger Straße 2-4, 70372 Stuttgart, 48.8020462, 9.220829
+Augsburger Straße 460, 70327 Stuttgart, 48.7757337, 9.2580256
+Rembrandtstraße 47, 70567 Stuttgart, 48.7310371, 9.1503644
+Schwabenplatz 1, 70563 Stuttgart, 48.7301395, 9.1092763
+Aldinger Straße 70, 70378 Stuttgart, 48.8401909, 9.2282588
+Dresdner Straße 80, 04317 Leipzig, 51.3379653, 12.4049898
+Lindenauer Markt 2, 04177 Leipzig, 51.3369069, 12.3357491
+Georg-Schumann-Straße 105, 04155 Leipzig, 51.3628533, 12.3623307
+Georg-Schumann-Straße 290, 04159 Leipzig, 51.3730314, 12.3286823
+Anton-Zickmantel-Straße 42, 04249 Leipzig, 51.3029845, 12.3230272
+Torgauer Straße 279, 04347 Leipzig, 51.3672334, 12.4589578
+Kiewer Straße 30, 04205 Leipzig, 51.3232579, 12.275385
+Paunsdorfer Allee 1, 04329 Leipzig, 51.34856, 12.4785725
+Miltitzer Straße 13, 04178 Leipzig, 51.3476239, 12.2642739
+Bornstraße 160 a, 44145 Dortmund, 51.5288844, 7.4707342
+Körner Hellweg 142, 44143 Dortmund, 51.5179805, 7.5114125
+Luisenglück 43, 44225 Dortmund, 51.4763433, 7.4329911
+Aplerbecker Marktplatz 7-10, 44287 Dortmund, 51.4913333, 7.5557238
+Wulfshofstraße 6-8, 44149 Dortmund, 51.4946387, 7.3714169
+Sebaldsbrücker Heerstraße 155, 28309 Bremen, 53.0597099, 8.8929736
+Zum Alten Speicher 1, 28759 Bremen, 53.1666671, 8.6277297
+Berthold-Beitz-Boulevard 500, 45141 Essen, 51.4736365, 7.0002588
+Haedenkampstraße 21, 45143 Essen, 51.45814, 6.9837332
+Altenessener Straße 411, 45329 Essen, 51.4968324, 7.007887
+Gerichtsstraße 25, 45355 Essen, 51.4726294, 6.9527346
+Borsbergstraße 35, 01309 Dresden, 51.044094, 13.7812778
+Kohlenstraße 18, 01189 Dresden, 51.0194403, 13.7223179
+Kesselsdorfer Straße 81, 01159 Dresden, 51.0422917, 13.6831677
+Reicker Straße 60, 01219 Dresden, 51.0194994, 13.7799029
+Peschelstraße 33, 01139 Dresden, 51.0847544, 13.6946617
+Harthaer Straße 3, 01169 Dresden, 51.050281, 13.6610773
+Dohnaer Straße 246, 01239 Dresden, 50.9950651, 13.7995904
+Hohenbusch-Markt 1, 01108 Dresden, 51.1410963, 13.796283
+An der Prießnitzaue 3, 01328 Dresden, 51.0664332, 13.8946652
+Schwabacher Straße 99, 90439 Nürnberg, 49.437073, 11.0521346
+Fürther Straße 187, 90429 Nürnberg, 49.456759, 11.0371604
+Dianaplatz 23-25, 90443 Nürnberg, 49.4272607, 11.0662655
+Oppelner Straße 223, 90473 Nürnberg, 49.4011147, 11.1352967
+Rundestraße 5, 30161 Hannover, 52.3796416, 9.7402118
+Bornumer Straße 141, 30453 Hannover, 52.3519613, 9.6930068
+Krepenstraße 5, 30165 Hannover, 52.4086236, 9.7113695
+Auf der Höhe 20, 47059 Duisburg, 51.4406353, 6.7554555
+Friedrich-Ebert-Straße 2, 47119 Duisburg, 51.4565006, 6.7353841
+Kirchstraße 96, 47198 Duisburg, 51.4512319, 6.685551
+Duisburger Straße 303, 47166 Duisburg, 51.4972687, 6.7659397
+Kometenplatz 10, 47179 Duisburg, 51.5258221, 6.7441667
+Speicherstraße 2, 44809 Bochum, 51.4999702, 7.2045293
+Ümminger Straße 90, 44892 Bochum, 51.4697569, 7.2939271
+Alter Markt 1, 44866 Bochum, 51.4826718, 7.1302926
+Ottostraße 40-43, 44867 Bochum, 51.4719723, 7.1228897
+Elberfelder Straße 8, 42285 Wuppertal, 51.257241, 7.165881
+Kaiserstraße 39-41, 42329 Wuppertal, 51.2335816, 7.074876
+Schweriner Straße 4, 33605 Bielefeld, 52.0078362, 8.5637297
+Gütersloher Straße 122, 33649 Bielefeld, 51.9866847, 8.4856503
+Oppelner Straße 128, 53119 Bonn, 50.7507137, 7.0457219
+Maybachstraße 28, 68169 Mannheim, 49.5033847, 8.4757827
+Ortenbergstraße 8, 76135 Karlsruhe, 48.9915525, 8.3762258
+Durlacher Allee 111, 76137 Karlsruhe, 49.0039646, 8.4493277
+Carl-Metz-Straße 7, 76185 Karlsruhe, 49.0101522, 8.3525396
+Reichenberger Straße 59, 86161 Augsburg, 48.3646577, 10.9281609
+Meraner Straße 6, 86165 Augsburg, 48.3806065, 10.9312361
+Gögginger Straße 119, 86199 Augsburg, 48.347718, 10.8775192
+Biberbachstraße 10, 86154 Augsburg, 48.4008862, 10.8765736
+Äppelallee 69, 65203 Wiesbaden, 50.045008, 8.2166355
+Aachener Straße 387, 41069 Mönchengladbach, 51.183107, 6.4115753
+Reyerhütte 1, 41065 Mönchengladbach, 51.192468, 6.460389
+Krefelder Straße 131, 41063 Mönchengladbach, 51.207336, 6.4605285
+Moses-Stern-Straße 29, 41236 Mönchengladbach, 51.1633261, 6.4447027
+Vaalser Straße 242-246, 52074 Aachen, 50.7699543, 6.0585098
+Breslauer Straße 35, 52068 Aachen, 50.783427, 6.125751
+Hamburger Straße 250, 38114 Braunschweig, 52.2827771, 10.5198349
+Senefelderstraße 5, 38124 Braunschweig, 52.2167023, 10.5286567
+Skandinaviendamm 299, 24109 Kiel, 54.3209805, 10.0514655
+Thomas-Mann-Platz 1 C, 09130 Chemnitz, 50.8458647, 12.9372601
+Im Neefepark 3, 09116 Chemnitz, 50.8053007, 12.8615927
+Chemnitzer Straße 65, 09123 Chemnitz, 50.7839608, 12.8959525
+Zum Handelshof 1, 39108 Magdeburg, 52.120669, 11.6122305
+Halberstädter Straße 182-186, 39112 Magdeburg, 52.1070664, 11.5929196
+Kantstraße 5 A, 39104 Magdeburg, 52.1304126, 11.6313158
+Lübecker Straße 122, 39124 Magdeburg, 52.1540596, 11.6375858
+Waldkircher Straße 57, 79106 Freiburg im Breisgau, 48.0127852, 7.8525828
+St.-Georgener-Straße 2, 79111 Freiburg im Breisgau, 47.9880816, 7.7989914
+Mevissenstraße 60, 47803 Krefeld, 51.3463641, 6.532801
+Magdeburger Chaussee 23, 06118 Halle (Saale), 51.5227434, 11.9509198
+Zollrain 9, 06124 Halle (Saale), 51.4718901, 11.9232719
+Leipziger Chaussee 147, 06112 Halle (Saale), 51.454341, 12.016539
+Haifa-Allee 1, 55128 Mainz, 49.9672476, 8.2296898
+Rheinallee 120, 55120 Mainz, 50.02551, 8.230617
+Leipziger Straße 78a, 99085 Erfurt, 50.9882654, 11.0534331
+Hermsdorfer Straße 4, 99099 Erfurt, 50.9710846, 11.0592405
+Nordhäuser Straße 73t, 99091 Erfurt, 51.0086526, 10.9941054
+Kranichfelder Straße 103, 99097 Erfurt, 50.955125, 11.0691371
+Concordiastraße 32, 46049 Oberhausen, 51.4738746, 6.8416354
+Bahnhofstraße 80-84, 46145 Oberhausen, 51.515919, 6.853059
+Pütterweg 1, 18059 Rostock, 54.076121, 12.1211415
+Handwerkstraße 1, 18069 Rostock, 54.1239091, 12.0730833
+Franzgraben 40-42, 34125 Kassel, 51.321132, 9.517428
+Freiligrathstraße 51, 58099 Hagen, 51.3779854, 7.4615569
+Auf dem Lölfert 50, 58119 Hagen, 51.3641872, 7.5841314
+Babelsberger Straße 16, 14473 Potsdam, 52.3924755, 13.0671293
+Zeppelinstraße 132, 14471 Potsdam, 52.3892733, 13.0299452
+Am Moosfenn 1, 14478 Potsdam, 52.3636632, 13.0943231
+Breslauer Straße 1 A, 66121 Saarbrücken, 49.2282939, 7.0373566
+Ökonomierat-Peitzmeier-Platz 2-4, 59063 Hamm, 51.6657473, 7.8286128
+Wilhelmstraße 197, 59067 Hamm, 51.6650792, 7.7847097
+Römerstraße 16, 59075 Hamm, 51.6925562, 7.778825
+Münsterstraße 183, 59073 Hamm, 51.702336, 7.800408
+Stubbenweg 27, 26125 Oldenburg, 53.182341, 8.2281195
+Prälat-Caire-Straße 7, 67071 Ludwigshafen, 49.4897475, 8.3888912
+Heifeskamp 6, 45475 Mülheim an der Ruhr, 51.457952, 6.8849455
+Stixchesstraße 123, 51377 Leverkusen, 51.0274286, 7.0141797
+Carl-Fischer-Straße 1, 49084 Osnabrück, 52.2705632, 8.0820861
+Kurt-Schumacher-Damm 52-54, 49078 Osnabrück, 52.2653111, 8.0063405
+Stresemannstraße 37, 42719 Solingen, 51.1810578, 7.0410518
+Friedenstraße 64, 42699 Solingen, 51.1531531, 7.0228327
+Riemekestraße 37, 33102 Paderborn, 51.7159205, 8.7399154
+Husener Straße 121, 33100 Paderborn, 51.7034911, 8.7686648
+Bentelerstraße 4, 33104 Paderborn, 51.7434995, 8.726286
+Hauptstraße 211, 44649 Herne, 51.5281229, 7.1601071
+Kurfürsten-Anlage 61, 69115 Heidelberg, 49.4046561, 8.6813059
+Eppelheimer Straße 78, 69123 Heidelberg, 49.4036702, 8.64627
+Hertzstraße 1, 69126 Heidelberg, 49.3670191, 8.6851795
+Römerstraße 120, 41462 Neuss, 51.2131919, 6.6826938
+Bataverstraße 93, 41462 Neuss, 51.231114, 6.685461
+Friedenstraße 23, 93053 Regensburg, 49.0107175, 12.0994703
+Donaustaufer Straße 128, 93059 Regensburg, 49.02813, 12.1214295
+Hans-Hayder-Straße 2, 93059 Regensburg, 49.0339517, 12.1121207
+Richard-Wagner-Straße 40, 85057 Ingolstadt, 48.773995, 11.3989943
+Münchener Straße 146, 85051 Ingolstadt, 48.7374621, 11.437817
+Am Mühlkanal 4, 75172 Pforzheim, 48.8860389, 8.6682643
+Hohwiesenweg 2-2a, 75175 Pforzheim, 48.8966521, 8.7225727
+Wilhelm-Becker-Straße 15, 75179 Pforzheim, 48.9015764, 8.6676056
+Nürnberger Straße 12, 97076 Würzburg, 49.79937, 9.9520783
+Industriestraße 3-5, 97076 Würzburg, 49.812318, 9.976941
+Olgastraße 57, 74072 Heilbronn, 49.1368137, 9.2077775
+Neckargartacher Straße 111, 74080 Heilbronn, 49.1512412, 9.1965483
+Stuttgarter Straße 85, 74074 Heilbronn, 49.124007, 9.2230216
+Blaubeurer Straße 29, 89077 Ulm, 48.4010543, 9.9741714
+Brandgehaege 9, 38444 Wolfsburg, 52.3706607, 10.7258392
+Elliehäuser Weg 23, 37079 Göttingen, 51.5493199, 9.9001077
+Kurze-Geismar-Straße 26, 28, 30, 37073 Göttingen, 51.5311338, 9.9382306
+Am Kauf Park 2, 37079 Göttingen, 51.5280807, 9.8828881
+Pferdebade 6, 27580 Bremerhaven, 53.572428, 8.599059
+Bohmsiel 1, 27572 Bremerhaven, 53.4916074, 8.6009403
+Berliner Platz 8, 46236 Bottrop, 51.5225623, 6.92838
+Carl-Thiersch-Straße 4, 91052 Erlangen, 49.5937742, 11.0259356
+Westl. Stadtmauerstraße 27, 91054 Erlangen, 49.5999815, 11.0013299
+Presover Straße 20, 42859 Remscheid, 51.1769996, 7.2027564
+Refrather Weg 1, 51465 Bergisch Gladbach, 50.9829471, 7.1222469
+Naumburger Straße 57 A, 07743 Jena, 50.9518005, 11.6103067
+Karl-Marx-Allee 20, 07747 Jena, 50.884513, 11.607668
+Albert-Schweitzer-Straße 1, 38226 Salzgitter, 52.1505712, 10.3294476
+Aachener Straße 58, 54294 Trier, 49.7557801, 6.6244512
+Ostallee 3-7, 54290 Trier, 49.7560689, 6.6502166
+Hagener Straße 133, 57072 Siegen, 50.8877884, 8.0285711
+Römerstraße 570, 47443 Moers, 51.454629, 6.65784
+Hülsdonker Straße 86, 47441 Moers, 51.4517508, 6.6122694
+Am Anger 22, 33332 Gütersloh, 51.900471, 8.401941
+Pariser Straße 123, 67655 Kaiserslautern, 49.4426812, 7.7517106
+Forchheimer Straße 15, 96050 Bamberg, 49.87905, 10.920386

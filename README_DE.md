@@ -27,7 +27,7 @@ Eine leichtgewichtige Web-App (ohne Node.js), um zu prüfen, ob Supermärkte in 
 
 ## To-do-Liste
 
-- Aktuell wird nur REWE unterstuetzt; weitere Supermarktketten folgen spaeter.
+- Aktuell wird nur REWE, Aldi, und Kaufland unterstuetzt; weitere Supermarktketten folgen spaeter.
 - Fuer einige Supermarktadressen koennen ueber OpenStreetMap derzeit keine Koordinaten ermittelt werden.
 - Einige Maerkte fehlen noch in der Supermarktliste der `overview`-Seite; gleichnamige Staedte muessen in bestimmten Faellen noch geprueft werden.
 

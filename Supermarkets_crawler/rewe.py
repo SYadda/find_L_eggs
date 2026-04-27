@@ -8,9 +8,11 @@ from playwright.sync_api import sync_playwright
 
 
 BASE_URL = "https://www.rewe.de/"
-CITY_FILE = Path("city_name.txt")
-OUTPUT_FILE = Path("rewe.txt")
-PROGRESS_FILE = Path("rewe_progress.json")
+BASE_DIR = Path(__file__).resolve().parent
+ROOT_DIR = BASE_DIR.parent
+CITY_FILE = ROOT_DIR / "city_name.txt"
+OUTPUT_FILE = BASE_DIR / "rewe.txt"
+PROGRESS_FILE = BASE_DIR / "rewe_progress.json"
 
 
 def random_pause(min_seconds: float = 0.6, max_seconds: float = 1.6) -> None:

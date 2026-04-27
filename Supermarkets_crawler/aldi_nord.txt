@@ -1,0 +1,614 @@
+Friedrichstraße 149 10117 Berlin
+Berolinastraße 7 10178 Berlin
+Weinstraße 9 10249 Berlin
+Heinrich-Heine-Platz 8-12 10179 Berlin
+Leipziger Platz 12 10117 Berlin
+Eisenbahnstraße 42 10997 Berlin
+Invalidenstraße 59 10557 Berlin
+Rüdersdorfer Straße 65 10243 Berlin
+Gerichtstraße 2-3 13347 Berlin
+Tamara-Danz-Straße 11 10243 Berlin
+Greifswalder Straße 168 10409 Berlin
+Schwedter Straße 83 10437 Berlin
+Badstraße 4 13357 Berlin
+Liberdastraße 5 12047 Berlin
+Storkower Straße 176 10369 Berlin
+Ostseestraße 25 10409 Berlin
+Hasenheide 108 10967 Berlin
+Revaler Straße 33 10245 Berlin
+Kreuzbergstraße 39 10965 Berlin
+Esplanade 9 13187 Berlin
+Potsdamer Straße 180 10783 Berlin
+Börnestraße 25 13086 Berlin
+Neumannstraße 13 13189 Berlin
+Frankfurter Allee 117 10365 Berlin
+Chopinstraße 28 13088 Berlin
+Karl-Marx-Straße 92-98 12043 Berlin
+Richard-von-Weizsäcker-Platz 2 10827 Berlin
+Kiefholzstraße 49 12435 Berlin
+Frankfurter Allee 144 10365 Berlin
+Müllerstraße 128 13349 Berlin
+Hermannstraße 72 12049 Berlin
+Josef-Orlopp-Straße 22-24 10367 Berlin
+Pankower Allee 17-19 13409 Berlin
+Hoeppnerstraße 3-13 12101 Berlin
+Breite Strasse 20 13187 Berlin
+Saatwinkler Damm 8 13627 Berlin
+Prager Platz 1-3 10779 Berlin
+Rennbahnstraße 65 13086 Berlin
+Huttenstraße 41-44 10553 Berlin
+Straße vor Schönholz 21 13158 Berlin
+Schöneberger Straße 28 12103 Berlin
+Hauptstraße 36 10317 Berlin
+Silbersteinstraße 146 12051 Berlin
+Karl-Marx-Straße 231-235 12055 Berlin
+Wilmersdorfer Straße 36-37 10625 Berlin
+Landsberger Allee 277 13055 Berlin
+Rummelsburger Straße 98 10319 Berlin
+Wexstraße 16-18 10715 Berlin
+Grenzallee 4 L 12057 Berlin
+Tempelhofer Damm 198-200 12099 Berlin
+Blankenburger Straße 86-92 13156 Berlin
+Hauptstraße 9 13055 Berlin
+Dietzgenstraße 82 13156 Berlin
+Alfred-Kowalke-Straße 2 10315 Berlin
+Ollenhauerstraße 106 13403 Berlin
+Mecklenburgische Straße 23a-24 14197 Berlin
+Roedernallee 15-16 13407 Berlin
+Heilbronner Straße 26a 10711 Berlin
+Röblingstraße 124 12105 Berlin
+Schloßstraße 4-5 12163 Berlin
+Sewanstraße 259 10319 Berlin
+Späthstraße 14-15 12359 Berlin
+Bismarckstraße 17 12169 Berlin
+Fürstenbrunner Weg 50 14059 Berlin
+Prerower Platz 1 13051 Berlin
+Bergstraße 93-97 12169 Berlin
+Köpenicker Landstraße 294 12437 Berlin
+Alt-Mariendorf 16 12107 Berlin
+Marzahner Chaussee 218 12681 Berlin
+Hauptstraße 119 13158 Berlin
+Oranienburger Straße 57/58 13437 Berlin
+Buckower Damm 50 12349 Berlin
+Theodor-Heuss-Platz 7 14052 Berlin
+Märkische Spitze 21 12681 Berlin
+Rummelsburger Straße 16 12459 Berlin
+Warnemünder Straße 8 14199 Berlin
+Senftenberger Ring 17 13439 Berlin
+Treseburger Straße 26 13129 Berlin
+Fritz-Reuter-Allee 184 12359 Berlin
+Holzhauser Straße 26 13509 Berlin
+Haynauer Straße 76-80 12249 Berlin
+Dorfstraße 22 13059 Berlin
+Zirkusweg 4-6 20359 Hamburg
+Neuer Kamp 31 20359 Hamburg
+Lola-Rogge-Platz 38 20457 Hamburg
+Holstenstraße 156 22765 Hamburg
+Große Bergstraße 152-162 22767 Hamburg
+Grindelberg 27-31 20144 Hamburg
+Eimsbütteler Chaussee 85 20259 Hamburg
+Bismarckstraße 24 20259 Hamburg
+Ernst-August-Stieg 7 21107 Hamburg
+Lübecker Straße 116-124 22087 Hamburg
+Billhorner Röhrendamm 145-147 20539 Hamburg
+Ottenser Hauptstraße 10 22765 Hamburg
+Eiffestraße 406-418 20537 Hamburg
+Osterstraße 119 20259 Hamburg
+Bahrenfelder Straße 188 22765 Hamburg
+Hamburger Straße 23 22083 Hamburg
+Eidelstedter Weg 44 20255 Hamburg
+Barmbeker Straße 17-25 22303 Hamburg
+Holsteinischer Kamp 65 22081 Hamburg
+Paul-Dessau-Straße 8 22761 Hamburg
+Winterhuder Marktplatz 6 7 a 22299 Hamburg
+Menckesallee 24-26 22089 Hamburg
+Dratelnstraße 23-25 21109 Hamburg
+Bahrenfelder Kirchenweg 80 22761 Hamburg
+Osterfeldstraße 39 22529 Hamburg
+Krüsistraße 7 22305 Hamburg
+Horner Landstraße 110 22111 Hamburg
+Wandsbeker Marktstraße 103-107 22041 Hamburg
+Grelckstraße 2 22529 Hamburg
+Randstraße 77 22525 Hamburg
+Bramfelder Straße 103 22305 Hamburg
+Borsteler Chaussee 86 22453 Hamburg
+Fuhlsbüttler Straße 334 22307 Hamburg
+Auf dem Königslande 21 22041 Hamburg
+Köhlfleet-Hauptdeich 7 21129 Hamburg
+Kieler Straße 577e 22525 Hamburg
+Alsterdorfer Markt 4 22297 Hamburg
+Stephanstraße 6 22047 Hamburg
+Schiffbeker Weg 27 22111 Hamburg
+Osdorfer Landstraße 1a 22607 Hamburg
+Querkamp 69 22119 Hamburg
+Gustav-Adolf-Straße 92 22043 Hamburg
+Steilshooper Straße 317 22309 Hamburg
+Haldesdorfer Straße 86 22179 Hamburg
+Luruper Hauptstraße 79 22547 Hamburg
+Schreyerring 6 22309 Hamburg
+Tibarg 41-43 22459 Hamburg
+Lohkampstraße 11-25 22523 Hamburg
+Möllner Landstraße 131 22117 Hamburg
+Tonndorfer Hauptstraße 28 22045 Hamburg
+Schippelsweg 51 22455 Hamburg
+Erdkampsweg 134 22335 Hamburg
+Lüneburger Straße 39 21073 Hamburg
+Berner Chaussee 16 22175 Hamburg
+Jenfelder Allee 70 22043 Hamburg
+Grimmaische Straße 13-15 04109 Leipzig
+Willy-Brandt-Platz 7 04109 Leipzig
+Elsterstraße 51 - 57 04109 Leipzig
+Windmühlenstraße 31 04107 Leipzig
+Braustraße 26 04107 Leipzig
+Prager Straße 30c 04103 Leipzig
+Konradstraße 27 04315 Leipzig
+Nonnenstraße 13-15 04229 Leipzig
+Arthur-Hoffmann-Straße 113 04275 Leipzig
+Elsbethstraße 25 04155 Leipzig
+Eilenburger Straße 55 04317 Leipzig
+Delitzscher Straße 61 04129 Leipzig
+Lützner Straße 148-158 04179 Leipzig
+Georg-Schwarz-Straße 92-96 04179 Leipzig
+Klingenstraße 38a 04229 Leipzig
+Max-Liebermann-Straße 19f 04157 Leipzig
+Löbauer Straße 68-70 04347 Leipzig
+Holzhäuser Straße 108 04299 Leipzig
+Riesaer Straße 30 04328 Leipzig
+Tauchaer Straße 10 04357 Leipzig
+Georg-Schumann-Straße 363 04159 Leipzig
+Bockstraße 1-3 04289 Leipzig
+Friederikenstraße 25 04279 Leipzig
+Heinrich-Heine-Straße 39 04178 Leipzig
+Gerhard-Ellrodt-Straße 30 04249 Leipzig
+Ludwigsburger Straße 9 04209 Leipzig
+Goldsternstraße 58 04329 Leipzig
+Handelsstraße 4-8 04356 Leipzig
+Jupiterstraße 44 04205 Leipzig
+Miltitzer Straße 13 04178 Leipzig
+Hugo-Aurig-Straße 7a 04319 Leipzig
+Straße am See 1 04207 Leipzig
+Märkische Straße 86-88 44141 Dortmund
+Schützenstraße 144-146 44147 Dortmund
+Bornstraße 160 44145 Dortmund
+Joachimstraße 4 44147 Dortmund
+Körner Hellweg 20 44143 Dortmund
+Gildenstraße 65 44263 Dortmund
+Freie-Vogel-Straße 9 44263 Dortmund
+Luisenglück 30 44225 Dortmund
+Benninghofer Straße 99 44269 Dortmund
+Lüdinghauser Straße 18 44339 Dortmund
+Aspeystraße 75 44369 Dortmund
+Hagener Straße 148 44225 Dortmund
+Schulte-Heuthaus-Straße 54 44379 Dortmund
+Oesterstraße 120 44309 Dortmund
+Rodenbergstraße 23 44287 Dortmund
+Wulfshofstraße 5 44149 Dortmund
+Frohlinder Straße 12 44379 Dortmund
+Wittbräucker Straße 53a 44287 Dortmund
+Wittbräucker Straße 372 44267 Dortmund
+Kruckeler Str. 266 44227 Dortmund
+Droote 46 44328 Dortmund
+Evinger Straße 583 44339 Dortmund
+Schleefstraße 15-19 44287 Dortmund
+Altenderner Straße 18 44329 Dortmund
+Bodelschwingher Straße 142 44357 Dortmund
+Siegburgstraße 20 44359 Dortmund
+Provinzialstraße 417 44388 Dortmund
+Westerstraße 33 28199 Bremen
+Theodor-Heuss-Allee 6 28215 Bremen
+Konsul-Smidt-Straße 8 28217 Bremen
+Dötlinger Straße 10-12 28197 Bremen
+Volkmannstraße 2 28201 Bremen
+Hemmstraße 353-357 28215 Bremen
+Waller Heerstraße 101 28219 Bremen
+Duckwitzstraße 55 28199 Bremen
+Emil-von-Behring-Straße 4 28207 Bremen
+Arsterdamm 94A 28277 Bremen
+Enrique-Schmidt-Straße 1 28359 Bremen
+Steinsetzerstraße 11 28279 Bremen
+Lindenhofstraße 1 - 15 28237 Bremen
+Alter Dorfweg 30-50 28259 Bremen
+Kattenturmer Heerstraße 326 28277 Bremen
+Vahrer Straße 279-281 28329 Bremen
+Leher Heerstraße 105-107 28359 Bremen
+Berliner Freiheit 14 28327 Bremen
+Osenbrückstraße 5 28309 Bremen
+Ritterhuder Heerstraße 6 28239 Bremen
+Hamfhofsweg 59 28357 Bremen
+Osterholzer Heerstraße 111-113 28307 Bremen
+Schevemoorer Landstraße 14-20 28325 Bremen
+Natorpstraße 26-30 45139 Essen
+Willy-Brandt-Platz 7 45127 Essen
+Steeler Straße 187 45138 Essen
+Katzenbruchstraße 78 45141 Essen
+Hubertstraße 20 45139 Essen
+Twentmannstraße 7-11 45141 Essen
+Feilenstraße 3 45141 Essen
+Schederhofstraße 125 45145 Essen
+Rüttenscheider Straße 62-64 45130 Essen
+Papestraße 42 45147 Essen
+Altendorfer Straße 226 45143 Essen
+Steeler Straße 466 45138 Essen
+Schürmannstraße 43b 45136 Essen
+Am Luftschacht 20 45307 Essen
+Lierfeldstraße 5 45326 Essen
+Keplerstraße 88-92 45147 Essen
+Eisenbahnstraße 20 45134 Essen
+Mörgekenweg 8 45309 Essen
+Heinrich-Held-Straße 39 45133 Essen
+Saatbruchstraße 55 45309 Essen
+Korthover Weg 57-59 45307 Essen
+Katernberger Straße 48-50 45327 Essen
+Wolfsbankring 30 45355 Essen
+Ruhrau 37 45279 Essen
+Nockwinkel 98-100 45277 Essen
+Wilhelm-Nieswandt-Allee 198 45326 Essen
+Alte Bottroper Straße 98 45356 Essen
+Fulerumer Straße 221-223 45149 Essen
+Dahlhauser Straße 177-179 45279 Essen
+Aktienstraße 42 45359 Essen
+Königsiepen 9 45259 Essen
+Donnerstraße 228-240 45359 Essen
+Frintroper Straße 422 45359 Essen
+Karnaper Straße 177 45329 Essen
+Alte Hauptstraße 111 45289 Essen
+Kupferdreher Straße 127 45257 Essen
+Ruhrtalstraße 99 45239 Essen
+Webergasse 1 01067 Dresden
+Prager Straße 11 01069 Dresden
+Straßburger Platz 1 01307 Dresden
+Uhlandstraße 5 01069 Dresden
+Antonstraße 2a 01097 Dresden
+Löbtauer Straße 40 01159 Dresden
+Pfotenhauerstraße 7b 01307 Dresden
+Chemnitzer Straße 28 01187 Dresden
+Tharandter Straße 40 01159 Dresden
+Bulgakowstraße 7 01217 Dresden
+Raimundstraße 1-3 01157 Dresden
+Lommatzscher Straße 1c 01139 Dresden
+Glashütter Straße 87 01277 Dresden
+Kesselsdorfer Straße 160 01169 Dresden
+Enderstraße 59 01277 Dresden
+Döbelner Straße 132 01129 Dresden
+Reicker Straße 97 01237 Dresden
+Löwenhainer Straße 2 01279 Dresden
+Wilhelm-Liebknecht-Straße 2 01257 Dresden
+Fritz-Meinhardt-Straße 5 01239 Dresden
+Gompitzer Höhe 5a 01156 Dresden
+Bautzner Landstraße 149 01324 Dresden
+Travemünder Straße 1 01109 Dresden
+Kleinzschachwitzer Ufer 3 01259 Dresden
+Pirnaer Landstraße 196 01257 Dresden
+Rundestraße 6 30161 Hannover
+Bürgerstraße 2-3 30161 Hannover
+Bardowicker Straße 10 30449 Hannover
+Mozartstraße 14-16 30173 Hannover
+Wöhlerstraße 48 30163 Hannover
+Schulenburger Landstraße 66-70 30165 Hannover
+Lindemannallee 21 30173 Hannover
+Kirchröder Straße 91-92 30625 Hannover
+Vahrenwalder Straße 252 30179 Hannover
+Tillystraße 30 30459 Hannover
+Am Bahndamm 17 30453 Hannover
+Davenstedter Straße 234-240 30455 Hannover
+Am Fuhrenkampe 14 30419 Hannover
+Adolf-Emmelmann-Straße 5 30659 Hannover
+Hildesheimer Straße 401 30519 Hannover
+Zur Stadtgärtnerei 1 30657 Hannover
+Wülferoder Straße 51 30539 Hannover
+Ohefeldweg 15 30559 Hannover
+Anderter Straße 16-18 30629 Hannover
+Iris-Runge-Platz 4 30539 Hannover
+Anderter Straße 101M 30559 Hannover
+Alleestraße 38-40 44793 Bochum
+Blumenstraße 7 44791 Bochum
+Herner Straße 55 44787 Bochum
+Bessemerstraße 85 44793 Bochum
+An der Landwehr 22 44795 Bochum
+Castroper Straße 206 44791 Bochum
+Lindengraben 14 44803 Bochum
+Riemker Straße 13 44809 Bochum
+Markstraße 139 44803 Bochum
+Dickebankstraße 59 44866 Bochum
+Markstraße 416 44795 Bochum
+Hansastraße 41 44866 Bochum
+Höntroper Straße 67 44869 Bochum
+Günnigfelder Straße 56-58 44866 Bochum
+Hattinger Straße 620-632 44879 Bochum
+Amtmann-Ibing-Straße 9 44805 Bochum
+Werner Hellweg 517-521 44894 Bochum
+Unterstraße 52-58 44892 Bochum
+Krayer Straße 44 44866 Bochum
+Dr.-C.-Otto-Straße 182 44879 Bochum
+Lütgendortmunder Hellweg 206 44894 Bochum
+Ronsdorfer Straße 2 42119 Wuppertal
+Klotzbahn 5 42105 Wuppertal
+Steinbecker Meile 6 42117 Wuppertal
+Briller Straße 179 42105 Wuppertal
+Friedrich-Engels-Allee 257 42285 Wuppertal
+Weinberg 107 42109 Wuppertal
+Oberbergische Straße 180 42285 Wuppertal
+Küllenhahner Straße 67 42349 Wuppertal
+Unterdörnen 80 42283 Wuppertal
+Benrather Straße 14 42115 Wuppertal
+Schützenstraße 27 42281 Wuppertal
+Rutenbecker Weg 3 42327 Wuppertal
+Klingelholl 110 42281 Wuppertal
+Bredde 36 42275 Wuppertal
+Am Kraftwerk 13 42369 Wuppertal
+Märkische Straße 277 42281 Wuppertal
+Rübenstraße 60 42289 Wuppertal
+Unterkirchen 24 42349 Wuppertal
+Kaiserstraße 33 42327 Wuppertal
+Weiherstraße 7 42277 Wuppertal
+Dahler Straße 72 42389 Wuppertal
+Westring 320 42329 Wuppertal
+Große-Kurfürsten-Straße 66 33615 Bielefeld
+Werner-Bock-Straße 38 33602 Bielefeld
+An der Tonkuhle 2 33617 Bielefeld
+Beckhausstraße 64 33611 Bielefeld
+Hauptstraße 53 33647 Bielefeld
+Carl-Severing-Straße 85 33649 Bielefeld
+Babenhauser Straße 20 33613 Bielefeld
+Briloner Straße 3 33647 Bielefeld
+Oldentruper Straße 266 33719 Bielefeld
+Gütersloher Straße 243 33649 Bielefeld
+Rabenhof 78 33609 Bielefeld
+Amtmann-Bullrich-Straße 23 33719 Bielefeld
+Oerlinghauser Straße 10 33699 Bielefeld
+Windelsbleicher Straße 239a 33659 Bielefeld
+Braker Straße 34 33729 Bielefeld
+Hansestraße 1 33689 Bielefeld
+Beckendorfstraße 3 33739 Bielefeld
+Bohlweg 66-68 48147 Münster
+Hafenweg 21 48155 Münster
+Catharina-Müller-Straße 6 48149 Münster
+Friedrich-Ebert-Straße 143 48153 Münster
+Robert-Bosch-Straße 21 48153 Münster
+Dieckstraße 79 48145 Münster
+Nevinghoff 12-16 48147 Münster
+Hamannplatz 29A 48157 Münster
+Idenbrockplatz 27/28 48159 Münster
+Dieckmannstraße 114 48161 Münster
+Albersloher Weg 539 48167 Münster
+Weseler Straße 651 48163 Münster
+Bergiusstraße 8 48165 Münster
+Westfalenstraße 218-224 48165 Münster
+Münsterstraße 40-42 48167 Münster
+Grothusstraße 21 45881 Gelsenkirchen
+Ahstraße, Klosterstraße 45879 Gelsenkirchen
+Kurt-Schumacher-Straße 192 45881 Gelsenkirchen
+Dessauerstraße 61 45886 Gelsenkirchen
+Wanner Straße 186 45888 Gelsenkirchen
+Pommernstraße 17g 45889 Gelsenkirchen
+Am Dördelmannshof 6 45886 Gelsenkirchen
+Heistraße 109 45891 Gelsenkirchen
+Emil-Zimmermann-Allee 20 45897 Gelsenkirchen
+Braukämper Straße 107 45899 Gelsenkirchen
+Horster Straße 41 45897 Gelsenkirchen
+Hertener Straße 53 45892 Gelsenkirchen
+Buschgrundstraße 33 45894 Gelsenkirchen
+Polsumer Straße 133 45896 Gelsenkirchen
+Wilhelmstraße 98 38100 Braunschweig
+Hamburger Straße 279 38114 Braunschweig
+Kastanienallee 21/22 38102 Braunschweig
+Celler Straße 81 38114 Braunschweig
+Berliner Platz 1D 38102 Braunschweig
+Hannoversche Straße 59 38114 Braunschweig
+Madamenweg 48 38118 Braunschweig
+Bevenroder Straße 149 38108 Braunschweig
+Neckarstraße 1 38120 Braunschweig
+Elbestraße 22 38120 Braunschweig
+Bienroder Weg 53 38108 Braunschweig
+Am Denkmal 4 38112 Braunschweig
+Jenastieg 16 38124 Braunschweig
+Ziegelkamp 57 38104 Braunschweig
+Preusserstraße 1-9 24105 Kiel
+Eichkamp 24 24116 Kiel
+Droysenstraße 5 24105 Kiel
+Augustenstraße 30a-32 24143 Kiel
+Mühlendamm 1 24113 Kiel
+Stormarnstraße 29 24113 Kiel
+Theodor-Heuss-Ring 136 24143 Kiel
+Hamburger Chaussee 180 24113 Kiel
+Rendsburger Landstraße 240 24113 Kiel
+Ostring 232 24148 Kiel
+Torfmoorkamp 10 24106 Kiel
+Philipp-Reis-Weg 4 24148 Kiel
+Steekberg 1 24107 Kiel
+Prinz-Heinrich-Straße 20 24106 Kiel
+Villacher Straße 8 24147 Kiel
+Kurt-Schumacher-Platz 4 24109 Kiel
+Langer Rehm 10 24149 Kiel
+Grot Steenbusch 35 24145 Kiel
+Schönkirchener Straße 80 b 24149 Kiel
+Brauner Berg 9 24159 Kiel
+Theaterstraße 7 09111 Chemnitz
+Dr.-Frieda-Freise Str. 3 09111 Chemnitz
+Heinrich-Schütz-Straße 55 09130 Chemnitz
+Waldenburger Straße 33 09116 Chemnitz
+Dr.-Salvador-Allende-Straße 1 09119 Chemnitz
+Zschopauer Straße 244 09126 Chemnitz
+Zwickauer Straße 247 09116 Chemnitz
+Annaberger Straße 315 09125 Chemnitz
+Bornaer Straße 148 09114 Chemnitz
+Wladimir-Sagorski-Straße 22 09122 Chemnitz
+Ackerstrasse 2 39112 Magdeburg
+Bergstraße 27 39116 Magdeburg
+Große Diesdorfer Straße 41 39110 Magdeburg
+Willy-Brandt-Platz 1 39104 Magdeburg
+Salbker Chaussee 67-71 39118 Magdeburg
+Friedrich-Ebert-Straße 73 39114 Magdeburg
+Olvenstedter Scheid 52 39130 Magdeburg
+Olvenstedter Graseweg 37 39128 Magdeburg
+Rogätzer Straße 27 39106 Magdeburg
+Hanns-Eisler-Platz 11 39128 Magdeburg
+Hermesstraße 7 06114 Halle
+Dölauer Straße 80 06120 Halle
+Leipziger Chaussee 147 06112 Halle
+Blücherstraße 36 06120 Halle (Saale)
+Trothaer Straße 42 06118 Halle (Saale)
+Beesener Straße 225 06110 Halle (Saale)
+Neustädter Passage 17 06122 Halle (Saale)
+Bennstedter Straße 22 06126 Halle (Saale)
+Kaiserslauterer Straße 65 06128 Halle (Saale)
+Schlachthofstraße 23 99085 Erfurt
+Augustmauer 4 99084 Erfurt
+Hermsdorfer Straße 4 99099 Erfurt
+Berliner Platz 4 99091 Erfurt
+Scheidemantelweg 9 99091 Erfurt
+Am Drosselberg 47 99097 Erfurt
+Kanalstraße 76 23552 Lübeck
+Ziegelstraße 2 b 23556 Lübeck
+Hansering 9-19 23558 Lübeck
+Ziegelstraße 109-111 23556 Lübeck
+Kronsforder Allee 70C 23560 Lübeck
+Kantstraße 22 23566 Lübeck
+Schwartauer Landstraße 4a 23554 Lübeck
+Weidentrift 2 23562 Lübeck
+Friedhofsallee 144 23554 Lübeck
+Glashüttenweg 31 23568 Lübeck
+Alexander-Fleming-Straße 1 23562 Lübeck
+Grootkoppel 5-7 23566 Lübeck
+Herrenholz 14 23556 Lübeck
+Brüder-Grimm-Ring 9 23560 Lübeck
+Solmitzstraße 18-24 23569 Lübeck
+Hans-Sachs-Allee 13a 18057 Rostock
+Werftstraße 50 18057 Rostock
+Am Fischereihafen 3 18069 Rostock
+Bertolt-Brecht-Straße 23 18106 Rostock
+Ostsee-Park-Straße 1A 18069 Rostock
+Timmermannsstrat 11 18055 Rostock
+Hinrichsdorfer Straße 8 18146 Rostock
+Goorstorfer Straße 50 18146 Rostock
+Lortzingstraße 19a 18119 Rostock
+Mauerstraße 11 34117 Kassel
+Wittrockstraße 3 34121 Kassel
+Fuldatalstraße 14 34125 Kassel
+Leipziger Straße 124 34123 Kassel
+Niedervellmarer Straße 2 34127 Kassel
+Glockenbruchweg 84 34134 Kassel
+Wolfhager Straße 274 34130 Kassel
+Mattenbergstraße 62 34132 Kassel
+Zollstraße 1 58089 Hagen
+Boeler Straße 121 58097 Hagen
+Wehringhauser Straße 81-85 58089 Hagen
+Wasserloses Tal 29 58093 Hagen
+Ophauser Straße 36 58089 Hagen
+Eilper Straße 69 58095 Hagen
+Schwerter Straße 192 58099 Hagen
+Enneper Straße 146a 58135 Hagen
+Esserstraße 15 58119 Hagen
+Bahnstraße 11 58119 Hagen
+Berliner Straße 47/48 14467 Potsdam
+Weidendamm 2 14482 Potsdam
+Zeppelinstraße 119/120 14471 Potsdam
+Potsdamer Straße 177 14469 Potsdam
+Georg-Hermann-Allee 145 14469 Potsdam
+Grossbeerenstraße 215/219 14480 Potsdam
+Grünstraße 102 59063 Hamm
+Werler Straße 244 59063 Hamm
+Lohauserholzstraße 4b 59067 Hamm
+Kleine Amtsstraße 9 59073 Hamm
+Am Dahlhof 2 59075 Hamm
+Moritz-Bacharach-Straße 7 59071 Hamm
+Dortmunder Straße 253 59077 Hamm
+Kamener Straße 148 59077 Hamm
+Nadorster Straße 150 26123 Oldenburg
+Bremer Straße 53 26135 Oldenburg
+Scheideweg 56-58 26121 Oldenburg
+Bloherfelder Straße 97 26129 Oldenburg
+Clausewitzstraße 3 26125 Oldenburg
+Alexanderstraße 322 26127 Oldenburg
+Posthalterweg 10 26129 Oldenburg
+Cloppenburger Straße 293 26133 Oldenburg
+Stubbenweg 31 26125 Oldenburg
+Alter Postweg 125 26133 Oldenburg
+Bohmter Straße 64-64c 49074 Osnabrück
+Petersburger Wall 9 49074 Osnabrück
+Martinistraße 93 49080 Osnabrück
+Mönkedieckstraße 3-9 49088 Osnabrück
+Pagenstecherstraße 144 49090 Osnabrück
+Heiligenweg 2 49084 Osnabrück
+Otto-Vesper-Straße 1 49078 Osnabrück
+Hannoversche Straße 90 49084 Osnabrück
+Am Wulfter Turm 2 49082 Osnabrück
+Schützenstraße 64 42659 Solingen
+Schlagbaumer Straße 126 42653 Solingen
+Beethovenstraße 131 42655 Solingen
+Neuenhofer Straße 99 42657 Solingen
+Weyerstraße 306 42719 Solingen
+Friedenstraße 94a 42699 Solingen
+Borchener Straße 25 33098 Paderborn
+Rathenaustraße 9 33102 Paderborn
+Pohlweg 110 33100 Paderborn
+Hardehauser Weg 2 33100 Paderborn
+Senefelderstraße 13 33100 Paderborn
+Ingolstädter Weg 13 33102 Paderborn
+Hatzfelder Straße 22-24 33104 Paderborn
+Wewerstraße 27 33106 Paderborn
+Wewersches Bruch 100 33106 Paderborn
+Weisgutstraße 20 33106 Paderborn
+Resser Straße 29 44653 Herne
+Berliner Straße 12 44652 Herne
+Forellstraße 101-113 44629 Herne
+Hölkeskampring 213 44625 Herne
+Dorstener Straße 263-265 44653 Herne
+Mont-Cenis-Straße 351 44627 Herne
+Riemker Straße 102 44625 Herne
+Porschestraße 102 38440 Wolfsburg
+Jembker Straße 1 38448 Wolfsburg
+Suhler Straße 6 38444 Wolfsburg
+An der Meine 10 38448 Wolfsburg
+Hehlinger Straße 21 38446 Wolfsburg
+Mühlenkamp 15 38442 Wolfsburg
+Mörser Straße 53 38442 Wolfsburg
+Alte Schulstraße 30 38448 Wolfsburg
+Plantage 86F 38444 Wolfsburg
+Weender Landstraße 59 37075 Göttingen
+Industriestraße 9 37079 Göttingen
+Leinestraße 49 37073 Göttingen
+Werner-von-Siemens-Straße 5 37077 Göttingen
+Am Kauf Park 2 37079 Göttingen
+Benzstraße 4 37083 Göttingen
+Alfred-Delp-Weg 5 37085 Göttingen
+Elbestraße 95 27570 Bremerhaven
+Barkhausenstraße 107 27568 Bremerhaven
+Stresemannstraße 150 27576 Bremerhaven
+Langener Landstraße 160 27580 Bremerhaven
+Bohmsiel 12 27572 Bremerhaven
+Hans-Böckler-Straße 38 27578 Bremerhaven
+Markt 16 45657 Recklinghausen
+Oerweg 50 45657 Recklinghausen
+Hubertusstraße 68 45657 Recklinghausen
+Werkstättenstraße 7 45659 Recklinghausen
+Friedrich-Ebert-Straße 106 45659 Recklinghausen
+Salentinstraße 160 45661 Recklinghausen
+Am Waldschlösschen 30 45663 Recklinghausen
+Schulstraße 47 45665 Recklinghausen
+Hohenhagener Straße 45 42855 Remscheid
+Burger Straße 85a 42859 Remscheid
+Kölner Straße 38 42897 Remscheid
+Theodor-Heuss-Platz 7 42853 Remscheid
+Kippdorfstraße 4 42857 Remscheid
+Kreuzbergstraße 14 42899 Remscheid
+Hammesberger Straße 24 42855 Remscheid
+Am Eichholz 2 42897 Remscheid
+Leutragraben 1 07743 Jena
+Altenburger Straße 1 07743 Jena
+Ossmaritzer Straße 1a 07745 Jena
+Ebereschenstraße 5-9 07747 Jena
+Watenstedter Weg 8 38229 Salzgitter
+Schlosserstr. 1 38229 Salzgitter
+Leibnizstraße 2 38228 Salzgitter
+Schäferwiese 8A 38239 Salzgitter
+Breslauer Straße 11-15 38259 Salzgitter
+Hagener Straße 9 57072 Siegen
+Känerbergstraße 16 57076 Siegen
+Marienborner Straße 259 57074 Siegen
+Leimbachstraße 185 57074 Siegen
+Kampstraße 20/22 33332 Gütersloh
+Haegestraße 6-8 33330 Gütersloh
+Hans-Böckler-Straße 32 33334 Gütersloh
+Osnabrücker Landstraße 1 33335 Gütersloh
+Isselhorster Straße 416 33334 Gütersloh

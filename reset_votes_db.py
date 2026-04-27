@@ -28,35 +28,25 @@ def main():
     conn = sqlite3.connect(DB_FILE)
     try:
         votes_exists = table_exists(conn, "votes")
-        events_exists = table_exists(conn, "vote_events")
         sequence_exists = table_exists(conn, "sqlite_sequence")
 
         votes_before = get_count(conn, "votes") if votes_exists else 0
-        events_before = get_count(conn, "vote_events") if events_exists else 0
 
         if votes_exists:
             conn.execute("DELETE FROM votes")
-        if events_exists:
-            conn.execute("DELETE FROM vote_events")
 
-        if sequence_exists:
-            if votes_exists:
-                conn.execute("DELETE FROM sqlite_sequence WHERE name = 'votes'")
-            if events_exists:
-                conn.execute("DELETE FROM sqlite_sequence WHERE name = 'vote_events'")
+        if sequence_exists and votes_exists:
+            conn.execute("DELETE FROM sqlite_sequence WHERE name = 'votes'")
 
         conn.commit()
     finally:
         conn.close()
 
-    if not votes_exists and not events_exists:
-        print("No vote tables found. Nothing to reset.")
+    if not votes_exists:
+        print("No votes table found. Nothing to reset.")
         return
 
-    print(
-        "Reset complete. "
-        f"Deleted {votes_before} rows from votes and {events_before} rows from vote_events."
-    )
+    print(f"Reset complete. Deleted {votes_before} rows from votes.")
 
 
 if __name__ == "__main__":

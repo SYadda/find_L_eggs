@@ -1,0 +1,247 @@
+Großhaderner Straße 44, 81375 München
+Landsberger Straße 388, 80687 München
+Pasinger Bahnhofsplatz 5, 81241 München
+Stockacher Straße 6, 81243 München
+Fürstenrieder Str. 51, 80686 München
+Amalie-Nacken-Str. 4, 81249 München
+Max-Bill-Straße 8, 80807 München
+Hermine-von-Parish-Straße 11, 81245 München
+Radlkoferstraße 12, 81373 München
+Berg-am-Laim-Straße 107, 81673 München
+Venloer Straße 760, 50827 Köln
+Aachener Straße 76, 50674 Köln
+Venloer Straße 377, 50825 Köln
+Friedberger Landstrasse 295, 60389 Frankfurt
+West-Höchster Straße 50, 65931 Frankfurt
+Hanauer Landstraße 285, 60314 Frankfurt
+Oskar-von-Miller-Straße 5, 60314 Frankfurt
+Hainer Weg 76, 60599 Frankfurt/Main
+Duisburger Straße 24, 40477 Düsseldorf
+Nürnberger Straße 37, 40599 Düsseldorf
+Harffstraße 24, 40591 Düsseldorf
+Krahe Straße 1, 40233 Düsseldorf
+Bochumer Straße 41, 40472 Düsseldorf
+Ahnfeldstraße 2-10, 40239 Düsseldorf
+Kölner Tor 12-14, 40625 Düsseldorf
+Carlo-Schmid-Straße 2, 40595 Düsseldorf
+An der Piwipp 86, 40468 Düsseldorf
+Flinger Straße 23-25, 40213 Düsseldorf
+Stuttgarter Straße 9, 70469 Stuttgart
+Adalbert-Stifter-Straße 103, 70437 Stuttgart
+Heimsheimer Straße 34, 70499 Stuttgart
+Schwieberdinger Straße 62, 70435 Stuttgart
+Mailänder Platz 7, 70173 Stuttgart
+Sophienstraße 21, 70178 Stuttgart
+Galileistraße 7, 70565 Stuttgart
+Deckerstraße 75, 70372 Stuttgart
+Am Kochenhof 10, 70192 Stuttgart
+Gablenberger Hauptstraße 32, 70186 Stuttgart
+Schlüsselstraße 8, 90403 Nürnberg
+Bessemer Straße 6, 90411 Nürnberg
+Konstanzenstraße 111, 90439 Nürnberg
+Katzwanger Straße 140, 90461 Nürnberg
+Eibacher Hauptstraße 127, 90451 Nürnberg
+Reutersbrunnenstraße 55, 90429 Nürnberg
+Wiesbadener Straße 41, 90427 Nürnberg
+Fürther Straße 301-303, 90429 Nürnberg
+Peter-Henlein-Straße 27-31, 90443 Nürnberg
+Zeltnerstraße 19, 90443 Nürnberg
+Königstraße 48, 47051 Duisburg
+Boveristraße 50, 68309 Mannheim
+Gotenstraße 12-16, 68259 Mannheim
+Alte Frankfurter Straße 31, 68305 Mannheim
+Amselstraße 10, 68307 Mannheim
+Spreewaldallee 44 - 50, 68309 Mannheim
+E2 16, 68159 Mannheim
+Floßwörthstraße 49-55, 68199 Mannheim
+Steubenstraße 44-46, 68163 Mannheim
+Untermühlaustraße 111, 68169 Mannheim
+Neckarauerstraße 126 - 134, 68163 Mannheim
+Kaiserstraße 147-159, 76133 Karlsruhe
+Ortenbergstraße 6, 76135 Karlsruhe
+Durmersheimer Straße 143, 76189 Karlsruhe
+Hohenzollernstraße 69, 76135 Karlsruhe
+Herrmann-Leichtlin-Str. 11, 76185 Karlsruhe
+Albert-Schenavsky-Straße 3, 86165 Augsburg
+Unterer Talweg 111, 86179 Augsburg
+Weiherstraße 10a, 86154 Augsburg
+Steinerne Furt 57 a, 86167 Augsburg
+Edisonstraße 4, 86199 Augsburg
+Lechhauser Straße 15a, 86153 Augsburg
+Hofrat-Röhrer-Straße 9, 86161 Augsburg
+Luther-King-Straße 2, 86156 Augsburg
+Prinzstraße 51 a, 86153 Augsburg
+Bgm.-Fischer-Straße 6-10, 86150 Augsburg
+Mainzer Straße 158, 65187 Wiesbaden
+Schiersteiner Straße 80, 65187 Wiesbaden
+Schützenhofstr. 4, 65183 Wiesbaden
+Bahnhofsplatz 3, 65189 Wiesbaden
+Monschauer Straße 42, 41068 Mönchengladbach
+Krefelder Straße 70, 41063 Mönchengladbach
+Odenkirchener Straße 300, 41236 Mönchengladbach
+Helmut-Grashoff-Straße 2, 41179 Mönchengladbach
+Tomper Weg 75, 41169 Mönchengladbach
+Markt 10, 41236 Mönchengladbach
+Mittelstraße 5, 41236 Mönchengladbach
+Stapper Weg 10, 41199 Mönchengladbach
+Bröseweg 36, 41063 Mönchengladbach
+Hofstraße 126, 41065 Mönchengladbach
+Franzstraße 2, 52064 Aachen
+Schillerstraße 20, 52064 Aachen
+Elsassstraße 139, 52068 Aachen
+Trierer Straße 688, 52078 Aachen
+Freunder Weg 23, 52068 Aachen
+Werkstraße 21, 52076 Aachen
+Forster Straße 5, 52080 Aachen
+Neuenhofstraße 192, 52078 Aachen
+Weststraße 28, 52074 Aachen
+Roder Weg 4, 52072 Aachen
+Heckerstraße 4, 79114 Freiburg
+Breisacher Straße 141, 79110 Freiburg
+Basler Straße 113, 79115 Freiburg
+Tullastraße 51, 79108 Freiburg
+Günterstalstraße 43, 79102 Freiburg
+Schiffstraße 7, 79098 Freiburg
+Krozinger Straße 11, 79114 Freiburg
+Schwarzwaldstraße 78, 79117 Freiburg
+Habsburgerstraße 5, 79104 Freiburg
+Egon Straße 58, 79106 Freiburg
+Kochstraße 46, 47805 Krefeld
+Kölner Straße 456-458, 47807 Krefeld
+Neue Ritterstraße 33, 47805 Krefeld
+Josef-Heinrichs-Straße 25, 47839 Krefeld
+Gahlingspfad 1, 47803 Krefeld
+Buddestraße 122, 47809 Krefeld
+Hafelsstraße 249, 47809 Krefeld
+Bruchfeld 2, 47809 Krefeld
+Kleinewefersstraße 50, 47803 Krefeld
+Nauenweg 74, 47804 Krefeld
+Luchsstraße 1, 46149 Oberhausen
+Duisburger Straße 531/535, 46049 Oberhausen
+Mellinghofer Straße 63, 46047 Oberhausen
+Concordiastraße 32, 46049 Oberhausen
+Rolandstraße 25, 46045 Oberhausen
+Jakobstrasse 40, 66115 Saarbrücken
+Hauptstr. 10, 66128 Saarbrücken
+Sulzbachtalstraße 157, 66125 Saarbrücken
+Am Torhaus 43, 66113 Saarbrücken
+Hohenzollernstraße 93, 66117 Saarbrücken
+Dudweiler Landstraße 141, 66123 Saarbrücken
+Rastpfuhl 2a, 66113 Saarbrücken
+Halbergstraße 5-7, 66121 Saarbrücken
+Hirtenwies 4, 66117 Saarbrücken
+Bahnhofstr. 15, 66111 Saarbrücken
+Thalhauser Straße 1, 57577 Hamm (Sieg)
+Industriestraße 13, 67063 Ludwigshafen
+Otto-Stabel-Straße 3, 67059 Ludwigshafen
+In der Mörschgewanne 32, 67065 Ludwigshafen
+Eschenbachstraße 71, 67063 Ludwigshafen
+Maudacher Straße 135, 67065 Ludwigshafen
+Kurt-Schumacher-Straße 72, 67069 Ludwigshafen
+Uhlandstraße 8, 45468 Mülheim an der Ruhr
+Wiescher Weg 76-80, 45472 Mülheim an der Ruhr
+Humboldtring 5, 45472 Mülheim an der Ruhr
+Düsseldorfer Straße 190, 45481 Mülheim an der Ruhr
+Hans-Böckler-Platz 1-31, 45468 Mülheim an der Ruhr
+Essener Straße 46/48, 45470 Mülheim an der Ruhr
+Heidestraße 15, 45476 Mülheim an der Ruhr
+Ernst-Bloch-Straße 3, 51377 Leverkusen
+Overfeldweg 7, 51371 Leverkusen
+Wuppertalstraße 4, 51381 Leverkusen
+Peschstraße 11, 51373 Leverkusen
+Syltstraße 12, 51377 Leverkusen
+Am Klösterchen 1 - 6, 51375 Leverkusen
+Hitdorfer Straße 79, 51371 Leverkusen
+Ludwigsplatz 6, 64283 Darmstadt
+Rüdesheimer Straße 123 D, 64285 Darmstadt
+Bad Nauheimer Straße 19-21, 64289 Darmstadt
+Eschollbrücker Straße 30, 64295 Darmstadt
+Poststraße 11, 69115 Heidelberg
+Berliner Straße 49, 69120 Heidelberg
+Im Schuhmachergewann 8, 69123 Heidelberg
+Pleikartsförster Straße 13, 69124 Heidelberg
+Kleingemünder Straße 76-82, 69118 Heidelberg
+Galileistraße 14, 69115 Heidelberg
+Fritz-Frey-Straße 17, 69121 Heidelberg
+Felix-Wankel-Straße 18, 69126 Heidelberg
+Oberstraße 93, 41460 Neuss
+Wolberostraße 9, 41462 Neuss
+Breslauer Straße 2-4, 41460 Neuss
+Johann-Hösl-Straße 1, 93053 Regensburg
+Balwinusstraße 2, 93051 Regensburg
+Rennweg 18, 93049 Regensburg
+Weichser Weg 32, 93059 Regensburg
+Neuburger Straße 59, 85057 Ingolstadt
+Despag-Straße 2, 85055 Ingolstadt
+Eriagstraße 10, 85053 Ingolstadt
+Münchener Straße 180, 85051 Ingolstadt
+Fauststraße 74, 85051 Ingolstadt
+Frühlingstraße 35, 85055 Ingolstadt
+Strietweg 70, 75181 Pforzheim
+Mannheimer Straße 3, 75179 Pforzheim
+Adolf-Richter-Straße 4-6, 75179 Pforzheim
+Bauschlotter Straße 37, 75177 Pforzheim
+Eutinger Straße 164, 75175 Pforzheim
+Kurze Steig 4, 75179 Pforzheim
+Bleichstraße 34, 75173 Pforzheim
+Hartmannstraße 18, 63071 Offenbach
+Geleitsstraße 6, 63065 Offenbach
+Sprendlinger Landstraße 179, 63069 Offenbach
+Kettelerstraße 98, 63075 Offenbach
+Industriestraße 1, 64658 Fürth
+Erlanger Straße 200, 90765 Fürth
+Karolinenstraße 90, 90763 Fürth
+Hans-Vogel-Straße 50, 90765 Fürth
+Würzburger Straße 171, 90766 Fürth
+Magazinstraße 61, 90763 Fürth
+Friedrich-Ackermann-Str. 22, 74081 Heilbronn
+Pfaffenstraße 43, 74078 Heilbronn
+Gaswerkstraße 41, 74076 Heilbronn
+Stuttgarter Straße 2, 74074 Heilbronn
+Wiblinger Ring 100, 89079 Ulm
+Blaubeurer Straße 47, 89077 Ulm
+Bahnhofstraße 5 - 7, 89073 Ulm
+Ringelbachstraße 183, 72762 Reutlingen
+Heubergstraße 7, 72766 Reutlingen
+Föhrstraße 8, 72760 Reutlingen
+Am Südring-Center 3, 46242 Bottrop
+Horster Straße 54, 46236 Bottrop
+Henkestraße 92, 91052 Erlangen
+Gundstraße 2, 91056 Erlangen
+Cumianastraße 5, 91058 Erlangen
+Allee am Röthelheimpark 15, 91052 Erlangen
+Henkestraße 5, 91052 Erlangen
+Moselweißer Str. 115, 56073 Koblenz
+Bahnhofstraße 50, 56068 Koblenz
+Berliner Ring 20-24, 56075 Koblenz
+Ernst-Abbe-Straße 19, 56070 Koblenz
+Am Stockbrunnen 2, 51429 Bergisch Gladbach
+Hauptstraße 131, 51465 Bergisch Gladbach
+Bensberger Straße 190-192, 51469 Bergisch Gladbach
+Kürtener Straße 1, 51465 Bergisch Gladbach
+Kradepohlsmühlenweg 8, 51469 Bergisch Gladbach
+Frankenforster Str. 25, 51427 Bergisch Gladbach
+Martha-Brach-Straße 4, 54294 Trier
+Wisportstraße 8, 54295 Trier
+Zurmaiener Straße 174 a, 54292 Trier
+Kohlenstraße 64, 54296 Trier
+Ostallee 3, 54290 Trier
+Castelnauplatz 3, 54294 Trier
+Nagelstraße 25-27, 54290 Trier
+Ehranger Straße 98, 54293 Trier
+Baustraße 27, 47441 Moers
+Drennesweg 3, 47445 Moers
+Düsseldorfer Straße 332-338, 47447 Moers
+Orsoyer Allee 1b, 47445 Moers
+Uerdinger Straße 67, 47441 Moers
+Franz-Haniel-Straße 90, 47443 Moers
+Bahnhofstraße 17, 47447 Moers
+Zollamtstraße 30, 67663 Kaiserslautern
+Mannheimer Straße 234, 67657 Kaiserslautern
+Fackelrondell 1, 67655 Kaiserslautern
+Merkurstraße 25, 67663 Kaiserslautern
+Mainzer Straße 69, 67657 Kaiserslautern
+Königstraße 115, 67655 Kaiserslautern
+Münchner Ring 11, 96050 Bamberg
+Memmelsdorfer Straße 145, 96052 Bamberg
+Pödeldorfer Straße 1, 96052 Bamberg

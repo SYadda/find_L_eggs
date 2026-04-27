@@ -92,12 +92,14 @@ def geocode_lookup_from_cache(cache):
         for city_entry in cities.values():
             if not isinstance(city_entry, dict):
                 continue
-            markets = city_entry.get("markets")
-            if not isinstance(markets, dict):
-                continue
-            for address, geo in markets.items():
-                if isinstance(geo, dict) and geo.get("lat") is not None and geo.get("lon") is not None:
-                    lookup[address] = {"lat": float(geo["lat"]), "lon": float(geo["lon"])}
+            # 遍历每个城市下的品牌
+            for brand_entry in city_entry.values():
+                if not isinstance(brand_entry, dict):
+                    continue
+                # 遍历品牌下的每个地址
+                for address, geo in brand_entry.items():
+                    if isinstance(geo, dict) and geo.get("lat") is not None and geo.get("lon") is not None:
+                        lookup[address] = {"lat": float(geo["lat"]), "lon": float(geo["lon"])}
 
     for key, value in cache.items() if isinstance(cache, dict) else []:
         if key in {"meta", "cities", "spatial_index"}:
@@ -176,11 +178,12 @@ def init_db():
         CREATE TABLE IF NOT EXISTS markets (
             id INTEGER PRIMARY KEY,
             brand TEXT NOT NULL,
-            address TEXT NOT NULL UNIQUE,
+            address TEXT NOT NULL,
             city TEXT NOT NULL,
             zip TEXT,
             lat REAL,
-            lon REAL
+            lon REAL,
+            UNIQUE(address, brand)
         )
         """
     )

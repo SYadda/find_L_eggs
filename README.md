@@ -25,7 +25,7 @@ Lightweight web app (no Node.js) to check whether supermarkets in Erlangen, Für
 
 ## To-do list
 
-- Only REWE is supported for now; more supermarket chains will be added later.
+- Only REWE, Aldi, and Kaufland is supported for now; more supermarket chains will be added later.
 - Coordinates cannot yet be resolved from OpenStreetMap for some supermarket addresses.
 - Some supermarkets are still missing from the `overview` supermarket list; same-name cities in certain cases still need verification.
 
