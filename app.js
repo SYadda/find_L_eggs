@@ -14,7 +14,11 @@ const I18N = {
     tagline: "Help people with tighter budgets get larger eggs.",
     repoNote: "Source code on",
     langLabel: "Language",
-    adminLink: "Open overview",
+    adminLink: "Overview",
+    locateBtn: "My Location",
+    locatingBtn: "Locating...",
+    locateErrorNone: "Could not find supermarkets near you.",
+    locateErrorGeo: "Unable to access your location. Please enable location services.",
     description1:
       "Please only upload eggs priced at or below 2.49€/10 or 4.19€/18. This is usually supermarket-own-brand barn eggs (Bodenhaltung). We are not tracking expensive eggs.",
     description2:
@@ -40,7 +44,11 @@ const I18N = {
     tagline: "帮助预算紧张的人买到更大的鸡蛋。",
     repoNote: "开源项目，代码见",
     langLabel: "语言",
-    adminLink: "打开概览页",
+    adminLink: "概览",
+    locateBtn: "定位我附近",
+    locatingBtn: "定位中...",
+    locateErrorNone: "未能找到你附近的超市。",
+    locateErrorGeo: "无法获取你的位置，请启用位置服务。",
     description1:
       "请仅上传价格小于等于 2.49€/10 个或 4.19€/18 个的鸡蛋信息。这通常是超市自有品牌的 Bodenhaltung 鸡蛋。我们不关注昂贵鸡蛋。",
     description2: "所有数据均来自近期用户上传。对我们最好的支持，就是持续上传最新数据！",
@@ -64,7 +72,11 @@ const I18N = {
     tagline: "Hilft Menschen mit kleinem Budget, groessere Eier zu finden.",
     repoNote: "Quellcode auf",
     langLabel: "Sprache",
-    adminLink: "Uebersicht öffnen",
+    adminLink: "Übersicht",
+    locateBtn: "Mein Standort",
+    locatingBtn: "Wird gesucht...",
+    locateErrorNone: "Keine Supermärkte in Ihrer Nähe gefunden.",
+    locateErrorGeo: "Zugriff auf Ihren Standort nicht möglich. Bitte aktivieren Sie Standortdienste.",
     description1:
       "Bitte melde nur Eier mit einem Preis von höchstens 2,49€/10 oder 4,19€/18. Das sind in der Regel Eigenmarken-Bodenhaltungseier. Teure Eier werden hier nicht erfasst.",
     description2:
@@ -91,6 +103,7 @@ let currentLang = "en";
 const markerMap = new Map();
 let map;
 let initialViewport = null;
+let queryCenter = null;
 
 const MAP_VIEW_STORAGE_KEY = "find_l_eggs_map_view";
 
@@ -148,6 +161,25 @@ function focusedMarketIdFromQuery() {
   return Number.isInteger(id) && id > 0 ? id : null;
 }
 
+function loadCenterFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const rawLat = params.get("lat");
+  const rawLon = params.get("lon");
+  if (!rawLat || !rawLon) {
+    return null;
+  }
+
+  const lat = Number(rawLat);
+  const lon = Number(rawLon);
+  const validLat = Number.isFinite(lat) && lat >= -90 && lat <= 90;
+  const validLon = Number.isFinite(lon) && lon >= -180 && lon <= 180;
+  if (!validLat || !validLon) {
+    return null;
+  }
+
+  return { lat, lon };
+}
+
 function focusMarketFromQuery() {
   const marketId = focusedMarketIdFromQuery();
   if (!marketId) {
@@ -180,6 +212,7 @@ function applyLanguage() {
   setText("repoNoteText", "repoNote");
   setText("langLabel", "langLabel");
   setText("adminLink", "adminLink");
+  setText("locateBtnText", "locateBtn");
   setText("description1", "description1");
   setText("description2", "description2");
   setText("legendPlenty", "legendPlenty");
@@ -303,14 +336,203 @@ function attachPopupVoteHandler() {
   });
 }
 
+function getDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Earth's radius in km
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function countMarkersInView() {
+  const bounds = map.getBounds();
+  return countMarkersInBounds(bounds);
+}
+
+function countMarkersInBounds(bounds) {
+  let count = 0;
+  markerMap.forEach((marker) => {
+    const latLng = marker.getLatLng();
+    if (bounds.contains(latLng)) {
+      count++;
+    }
+  });
+  return count;
+}
+
+function boundsForZoom(zoom) {
+  const center = map.getCenter();
+  const size = map.getSize();
+  const halfSize = L.point(size.x / 2, size.y / 2);
+  const centerPoint = map.project(center, zoom);
+  const swPoint = centerPoint.subtract(halfSize);
+  const nePoint = centerPoint.add(halfSize);
+  return L.latLngBounds(map.unproject(swPoint, zoom), map.unproject(nePoint, zoom));
+}
+
+function waitForMoveEnd() {
+  return new Promise((resolve) => {
+    map.once("moveend", resolve);
+  });
+}
+
+function adjustZoomForMarkerCount() {
+  return new Promise((resolve) => {
+    let iterations = 0;
+    const maxIterations = 10;
+    const zoomStep = 0.2;
+    let targetZoom = map.getZoom();
+    let count = countMarkersInBounds(boundsForZoom(targetZoom));
+
+    while (iterations < maxIterations) {
+      if (count >= 3 && count <= 10) {
+        break;
+      }
+
+      iterations++;
+
+      if (count > 10) {
+        targetZoom += zoomStep;
+      } else {
+        targetZoom -= zoomStep;
+      }
+
+      count = countMarkersInBounds(boundsForZoom(targetZoom));
+    }
+
+    const minZoom = map.getMinZoom();
+    const maxZoom = map.getMaxZoom();
+    targetZoom = Math.max(minZoom, Math.min(maxZoom, targetZoom));
+
+    // Apply zoom once after computation, so no intermediate redraw happens.
+    if (targetZoom !== map.getZoom()) {
+      map.setZoom(targetZoom, { animate: false });
+    }
+
+    // Use actual rendered viewport count for message consistency.
+    const actualCount = countMarkersInView();
+    const finalZoom = map.getZoom();
+
+    // if (actualCount >= 3 && actualCount <= 10) {
+    //   alert(`迭代完成！总共迭代了 ${iterations} 轮\n当前视图中有 ${actualCount} 家超市\n迭代完成后的缩放倍数：${finalZoom.toFixed(2)}`);
+    // } else {
+    //   alert(`已达到最大迭代次数（${maxIterations} 轮）\n当前视图中有 ${actualCount} 家超市\n迭代完成后的缩放倍数：${finalZoom.toFixed(2)}`);
+    // }
+    resolve();
+  });
+}
+
+async function centerAndZoomByCoordinate(lat, lon) {
+  const allMarkets = Array.from(markerMap.values())
+    .map((marker) => {
+      const latLng = marker.getLatLng();
+      const dist = getDistance(lat, lon, latLng.lat, latLng.lng);
+      return { marker, lat: latLng.lat, lon: latLng.lng, dist };
+    })
+    .sort((a, b) => a.dist - b.dist);
+
+  if (allMarkets.length === 0) {
+    return;
+  }
+
+  const nearestCount = Math.min(5, allMarkets.length);
+  const nearest = allMarkets.slice(0, nearestCount);
+  const bounds = nearest.map((m) => [m.lat, m.lon]);
+  map.fitBounds(bounds, { padding: [50, 50], animate: true });
+  await waitForMoveEnd();
+  await adjustZoomForMarkerCount();
+}
+
+async function handleLocateClick() {
+  const btn = document.getElementById("locateBtn");
+  if (!btn || btn.disabled) return;
+
+  btn.disabled = true;
+  const locateBtnText = document.getElementById("locateBtnText");
+  const originalText = locateBtnText.textContent;
+  locateBtnText.textContent = t("locatingBtn");
+
+  try {
+    const position = await new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject, {
+        timeout: 10000,
+        enableHighAccuracy: false,
+      });
+    });
+
+    const userLat = position.coords.latitude;
+    const userLon = position.coords.longitude;
+
+    // Get all markets and find the nearest ones
+    const allMarkets = Array.from(markerMap.entries())
+      .map(([id, marker]) => {
+        const latLng = marker.getLatLng();
+        const dist = getDistance(userLat, userLon, latLng.lat, latLng.lng);
+        return { id, marker, lat: latLng.lat, lon: latLng.lng, dist };
+      })
+      .sort((a, b) => a.dist - b.dist);
+
+    if (allMarkets.length === 0) {
+      showToast(t("locateErrorNone"));
+      btn.disabled = false;
+      locateBtnText.textContent = originalText;
+      return;
+    }
+
+    // Get top 3-10 nearest markets
+    const nearestCount = Math.min(3, allMarkets.length);
+    const nearest = allMarkets.slice(0, nearestCount);
+
+    // Calculate bounds for these markets and fit map
+    const bounds = nearest.map((m) => [m.lat, m.lon]);
+    map.fitBounds(bounds, { padding: [50, 50], animate: true });
+    await waitForMoveEnd();
+
+    // Adjust zoom to show 3-10 markets in view
+    await adjustZoomForMarkerCount();
+  } catch (err) {
+    showToast(t("locateErrorGeo"));
+  } finally {
+    btn.disabled = false;
+    locateBtnText.textContent = originalText;
+  }
+}
+
 function initMap() {
+  queryCenter = loadCenterFromQuery();
   initialViewport = loadSavedViewport();
-  const center = initialViewport ? [initialViewport.lat, initialViewport.lon] : [49.5972, 11.0045];
-  const zoom = initialViewport ? initialViewport.zoom : 12.5;
+
+  // If there's no query center and no saved viewport, set default query params
+  // to ensure the URL shows the default location and the app uses it.
+  if (!queryCenter && !initialViewport) {
+    const defaultLat = 49.443;
+    const defaultLon = 11.088;
+    const params = new URLSearchParams(window.location.search);
+    params.set("lon", String(defaultLon));
+    params.set("lat", String(defaultLat));
+    const newUrl = window.location.pathname + "?" + params.toString();
+    history.replaceState({}, "", newUrl);
+    queryCenter = { lat: defaultLat, lon: defaultLon };
+  }
+
+  const center = queryCenter
+    ? [queryCenter.lat, queryCenter.lon]
+    : initialViewport
+      ? [initialViewport.lat, initialViewport.lon]
+      : [49.443, 11.088];
+  const zoom = queryCenter ? 15 : initialViewport ? initialViewport.zoom : 15;
 
   map = L.map("map", {
     center,
     zoom,
+    zoomSnap: 0.25,
+    zoomDelta: 0.25,
   });
 
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -339,11 +561,13 @@ async function renderMarkets() {
   }
 
   const hasFocusMarket = Boolean(focusedMarketIdFromQuery());
-  if (!initialViewport && !hasFocusMarket && bounds.length > 0) {
+  if (!initialViewport && !hasFocusMarket && !queryCenter && bounds.length > 0) {
     map.fitBounds(bounds, { padding: [18, 18] });
   }
 
-  focusMarketFromQuery();
+  if (!queryCenter) {
+    focusMarketFromQuery();
+  }
 }
 
 function setupLanguageSwitcher() {
@@ -359,12 +583,33 @@ function setupLanguageSwitcher() {
   });
 }
 
+function setupLocateButton() {
+  const locateBtn = document.getElementById("locateBtn");
+  if (locateBtn) {
+    locateBtn.addEventListener("click", handleLocateClick);
+  }
+}
+
+function setupOverviewButton() {
+  const overviewBtn = document.getElementById("adminLink");
+  if (overviewBtn) {
+    overviewBtn.addEventListener("click", () => {
+      window.location.href = "/overview";
+    });
+  }
+}
+
 async function main() {
   applyLanguage();
   setupLanguageSwitcher();
+  setupLocateButton();
+  setupOverviewButton();
   initMap();
   attachPopupVoteHandler();
   await renderMarkets();
+  if (queryCenter) {
+    await centerAndZoomByCoordinate(queryCenter.lat, queryCenter.lon);
+  }
 }
 
 main().catch(() => {

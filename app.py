@@ -21,7 +21,7 @@ SAME_STATUS_COOLDOWN_HOURS = 1
 RECENT_DARK_HOURS = 3
 VOTE_THRESHOLD = 3
 
-DEFAULT_CITY = "Erlangen"
+DEFAULT_CITY = "Nürnberg"
 VALID_STATUSES = {"plenty", "few", "none"}
 ZIP_CITY_REGEX = re.compile(r"\b\d{5}\s+([^,]+)$")
 

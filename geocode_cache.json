@@ -2,7 +2,7 @@
   "meta": {
     "schema_version": 3,
     "updated_at": "2026-04-27T05:06:11.850499+00:00",
-    "default_city": "Erlangen"
+    "default_city": "Nürnberg"
   },
   "cities": {
     "Aachen": {
@@ -13987,7 +13987,7 @@
     }
   },
   "spatial_index": {
-    "default_city": "Erlangen",
+    "default_city": "Nürnberg",
     "cell_size": 0.25,
     "bounds": {
       "min_lat": 47.0,

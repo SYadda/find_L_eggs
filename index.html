@@ -21,16 +21,31 @@
           <span id="taglineText">Help people with tighter budgets get larger eggs.</span>
         </p>
       </div>
-      <div class="lang-wrap">
+      <div class="lang-wrap lang-group">
         <span id="langLabel">Language</span>
         <div class="lang-buttons" role="group" aria-label="Language switcher">
           <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
           <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
         </div>
-        <a class="admin-link" href="/overview" id="adminLink">Open overview</a>
+        <button type="button" class="locate-btn" id="locateBtn" title="Find nearby supermarkets">
+          <span class="loc-icon" aria-hidden="true">📍</span>
+          <span id="locateBtnText">My Location</span>
+        </button>
+        <button type="button" class="lang-btn admin-link" id="adminLink">Overview</button>
       </div>
     </header>
+
+    <section class="legend" aria-label="Legend">
+      <div><span class="dot plenty"></span><span id="legendPlenty">Plenty of L eggs</span></div>
+      <div><span class="dot few"></span><span id="legendFew">Few L eggs</span></div>
+      <div><span class="dot none"></span><span id="legendNone">No L eggs</span></div>
+      <div><span class="dot unknown"></span><span id="legendUnknown">Not enough information</span></div>
+    </section>
+
+    <main>
+      <div id="map" role="region" aria-label="Supermarkets map"></div>
+    </main>
 
     <section class="notice">
       <p id="description1">
@@ -46,17 +61,6 @@
         <a class="repo-link" href="https://github.com/SYadda/find_L_eggs" target="_blank" rel="noopener noreferrer">GitHub</a>.
       </p>
     </section>
-
-    <section class="legend" aria-label="Legend">
-      <div><span class="dot plenty"></span><span id="legendPlenty">Plenty of L eggs</span></div>
-      <div><span class="dot few"></span><span id="legendFew">Few L eggs</span></div>
-      <div><span class="dot none"></span><span id="legendNone">No L eggs</span></div>
-      <div><span class="dot unknown"></span><span id="legendUnknown">Not enough information</span></div>
-    </section>
-
-    <main>
-      <div id="map" role="region" aria-label="Supermarkets map"></div>
-    </main>
 
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

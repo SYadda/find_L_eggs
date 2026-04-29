@@ -22,7 +22,7 @@ SUPERMARKETS_FILE = BASE_DIR / "Supermarkets.txt"
 GEOCODE_CACHE_FILE = BASE_DIR / "geocode_cache.json"
 CITY_NAME_FILE = BASE_DIR / "city_name.txt"
 
-DEFAULT_CITY = "Erlangen"
+DEFAULT_CITY = "Nürnberg"
 
 # Brand switches: set to False to ignore this supermarket brand entirely.
 ENABLE_EDEKA = True
