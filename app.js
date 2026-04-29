@@ -106,6 +106,26 @@ let initialViewport = null;
 let queryCenter = null;
 
 const MAP_VIEW_STORAGE_KEY = "find_l_eggs_map_view";
+const LANG_STORAGE_KEY = "find_l_eggs_lang";
+
+function loadSavedLang() {
+  try {
+    const raw = localStorage.getItem(LANG_STORAGE_KEY);
+    if (!raw) return null;
+    if (typeof raw === "string") return raw;
+    return null;
+  } catch (_err) {
+    return null;
+  }
+}
+
+function saveLang(lang) {
+  try {
+    localStorage.setItem(LANG_STORAGE_KEY, String(lang || "en"));
+  } catch (_err) {
+    // ignore
+  }
+}
 
 function loadSavedViewport() {
   try {
@@ -220,7 +240,7 @@ function applyLanguage() {
   setText("legendNone", "legendNone");
   setText("legendUnknown", "legendUnknown");
 
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
+  document.querySelectorAll(".lang-buttons .lang-btn").forEach((btn) => {
     const isActive = btn.dataset.lang === currentLang;
     btn.classList.toggle("active", isActive);
     btn.setAttribute("aria-pressed", isActive ? "true" : "false");
@@ -571,9 +591,10 @@ async function renderMarkets() {
 }
 
 function setupLanguageSwitcher() {
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
+  document.querySelectorAll(".lang-buttons .lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       currentLang = btn.dataset.lang || "en";
+      saveLang(currentLang);
       applyLanguage();
       // Re-bind popup text for currently loaded markers.
       fetchMarkets()
@@ -600,6 +621,10 @@ function setupOverviewButton() {
 }
 
 async function main() {
+  const saved = loadSavedLang();
+  if (saved) {
+    currentLang = saved;
+  }
   applyLanguage();
   setupLanguageSwitcher();
   setupLocateButton();

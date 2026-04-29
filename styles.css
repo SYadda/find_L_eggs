@@ -22,10 +22,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr) auto;
-  background:
-    radial-gradient(circle at top right, #fff7d6 0%, transparent 30%),
-    radial-gradient(circle at bottom left, #dff7e8 0%, transparent 40%),
-    var(--bg);
+  background: var(--bg);
 }
 
 .topbar {
@@ -48,15 +45,6 @@ h1 {
   color: var(--muted);
 }
 
-.lang-wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: end;
-  gap: 8px;
-  width: fit-content;
-  margin-left: auto;
-}
-
 .lang-group {
   display: flex;
   align-items: center;
@@ -77,15 +65,11 @@ h1 {
 }
 
 @media (max-width: 980px) {
-  .lang-wrap {
+  .lang-group {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     justify-items: stretch;
     width: 100%;
-  }
-
-  .lang-group {
-    justify-self: start;
   }
 
   .admin-link {
@@ -94,7 +78,7 @@ h1 {
 }
 
 @media (min-width: 981px) {
-  .lang-wrap {
+  .lang-group {
     grid-template-columns: 1fr;
   }
 
@@ -175,11 +159,13 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.86);
+  max-width: calc(100vw - 40px);
 }
 
 .notice p {
   margin: 8px 0;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .admin-notice {
@@ -423,6 +409,7 @@ main {
   margin: 4px 0 0;
   color: var(--muted);
   font-size: 0.86rem;
+  overflow-wrap: anywhere;
 }
 
 .repo-link:hover {
@@ -435,19 +422,7 @@ main {
     align-items: stretch;
   }
 
-  .lang-wrap {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    width: 100%;
-    max-width: none;
-    min-width: 0;
-  }
-
   .lang-group {
-    grid-column: auto;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -457,7 +432,6 @@ main {
   .lang-buttons,
   .locate-btn,
   .admin-link {
-    grid-column: auto;
     justify-self: auto;
     align-self: center;
   }

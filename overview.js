@@ -71,6 +71,25 @@ const MAP_VIEW_STORAGE_KEY = "find_l_eggs_map_view";
 const FALLBACK_CENTER = { lat: 49.5972, lon: 11.0045 };
 
 let adminLang = "en";
+const LANG_STORAGE_KEY = "find_l_eggs_lang";
+
+function loadSavedLangAdmin() {
+  try {
+    const raw = localStorage.getItem(LANG_STORAGE_KEY);
+    if (!raw) return null;
+    return raw;
+  } catch (_err) {
+    return null;
+  }
+}
+
+function saveLangAdmin(lang) {
+  try {
+    localStorage.setItem(LANG_STORAGE_KEY, String(lang || "en"));
+  } catch (_err) {
+    // ignore
+  }
+}
 let adminData = null;
 let countdownTimer = null;
 let includeAll = false;
@@ -118,6 +137,13 @@ function applyAdminLanguage() {
   setAdminText("thSummary", "thSummary");
   setAdminText("thDetails", "thDetails");
   setAdminText("showAllBtn", "showAll");
+
+  // Update language buttons active state (only buttons inside the language button group)
+  document.querySelectorAll(".lang-buttons .lang-btn").forEach((btn) => {
+    const isActive = btn.dataset.lang === adminLang;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
 }
 
 function statusPriority(displayStatus) {
@@ -366,12 +392,13 @@ async function refreshAdminData() {
 }
 
 function setupLanguage() {
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
+  document.querySelectorAll(".lang-buttons .lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       adminLang = btn.dataset.lang || "en";
+      saveLangAdmin(adminLang);
       applyAdminLanguage();
 
-      document.querySelectorAll(".lang-btn").forEach((otherBtn) => {
+      document.querySelectorAll(".lang-buttons .lang-btn").forEach((otherBtn) => {
         const isActive = otherBtn.dataset.lang === adminLang;
         otherBtn.classList.toggle("active", isActive);
         otherBtn.setAttribute("aria-pressed", isActive ? "true" : "false");
@@ -397,6 +424,10 @@ function setupShowAllButton() {
 }
 
 async function main() {
+  const saved = loadSavedLangAdmin();
+  if (saved) {
+    adminLang = saved;
+  }
   applyAdminLanguage();
   setupLanguage();
   setupShowAllButton();
